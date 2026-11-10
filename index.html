@@ -1,0 +1,3117 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="artifact-type" content="tool">
+  <meta name="design-style" content="sticker">
+  <title>四年級英語篩選測驗 (110–115年度) 聽力線上互動測驗</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+
+      /* Page and surfaces - Sticker style */
+      --background: #fef7ff;
+      --surface-container-low: #ffffff;
+      --surface-container: #f8eef8;
+      --surface-container-high: #f2e8f2;
+
+      /* Ink */
+      --on-surface: #2e1a28;
+      --on-surface-variant: #604868;
+
+      /* Rules */
+      --outline: #907898;
+      --outline-variant: #dcc8e0;
+
+      /* Accents */
+      --primary: #c2207f;
+      --on-primary: #ffffff;
+      --primary-container: #f080c0;
+      --on-primary-container: #2e1a28;
+      --secondary: #7c52aa;
+      --tertiary: #0096cc;
+      --error: #c53030;
+      --on-error: #ffffff;
+      --positive: #1f8a4c;
+      --on-positive: #ffffff;
+      --warning: #d96a00;
+      --focus: var(--primary);
+
+      /* Series */
+      --data-1: #c2207f;
+      --data-2: #7c52aa;
+      --data-3: #0096cc;
+      --data-4: #d96a00;
+      --data-context: #c8b8d0;
+
+      /* Typography */
+      --font-headline: 'Noto Sans TC', 'DM Sans', sans-serif;
+      --font-body: 'Noto Sans TC', 'DM Sans', sans-serif;
+      --font-label: 'JetBrains Mono', 'Noto Sans TC', monospace;
+
+      /* Type scale for tool */
+      --display-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.25rem);
+      --headline-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+      --subhead-size: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+      --body-size: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem);
+      --label-size: 0.75rem;
+
+      /* Shape */
+      --rounded: 1rem;
+      --rounded-lg: 1.75rem;
+      --rounded-full: 9999px;
+
+      /* Spacing scale */
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2.25rem;
+      --space-2xl: 3.5rem;
+
+      /* Motion */
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+      --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+      --dur-micro: 120ms;
+      --dur-short: 220ms;
+      --dur-long: 420ms;
+
+      /* Sticker style shadows */
+      --shadow-pink: 0 4px 16px rgb(224 64 160 / 0.18);
+      --shadow-pink-deep: 0 10px 28px rgb(224 64 160 / 0.3);
+      --shadow-grape: 0 4px 16px rgb(124 82 170 / 0.18);
+      --shadow-sky: 0 4px 16px rgb(0 150 204 / 0.18);
+      --shadow-card: 0 4px 20px rgb(46 26 40 / 0.06);
+      --pop-scale: scale(1.025);
+      --lift: translateY(-3px);
+    }
+
+    /* Base Reset */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body {
+      overflow-x: clip;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background);
+      color: var(--on-surface);
+      font-family: var(--font-body);
+      font-size: var(--body-size);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    header { position: static !important; }
+
+    button, input, select, textarea {
+      font-family: inherit;
+    }
+
+    .page-grid {
+      display: grid;
+      gap: var(--space-lg);
+      padding: var(--space-lg);
+      max-width: 1240px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .page-grid * { min-width: 0; }
+
+    /* Accessibility focus */
+    :focus-visible {
+      outline: 3px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    /* Typography helpers */
+    .display {
+      font-family: var(--font-headline);
+      font-weight: 900;
+      font-size: var(--display-size);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--on-surface);
+      margin: 0;
+    }
+    .display em {
+      font-style: normal;
+      color: var(--primary);
+    }
+    .headline {
+      font-family: var(--font-headline);
+      font-weight: 800;
+      font-size: var(--headline-size);
+      line-height: 1.3;
+      color: var(--on-surface);
+      margin: 0;
+    }
+    .subhead {
+      font-size: var(--subhead-size);
+      color: var(--on-surface-variant);
+      margin: 0;
+    }
+    .label-badge {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* Sticker style components */
+    .card {
+      background: var(--surface-container-low);
+      border-radius: var(--rounded);
+      box-shadow: var(--shadow-card);
+      padding: var(--space-lg);
+      position: relative;
+      transition: transform var(--dur-short) var(--ease-bounce), box-shadow var(--dur-short) var(--ease-out);
+    }
+    .card-pink { box-shadow: var(--shadow-pink); }
+    .card-grape { box-shadow: var(--shadow-grape); }
+    .card-sky { box-shadow: var(--shadow-sky); }
+
+    .hero-panel {
+      background: var(--surface-container-low);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-xl) var(--space-lg);
+      box-shadow: var(--shadow-pink);
+      border: 2px solid var(--surface-container);
+    }
+
+    /* Pills & Buttons */
+    .pill {
+      border-radius: var(--rounded-full);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-xs);
+    }
+
+    .btn {
+      border-radius: var(--rounded-full);
+      padding: var(--space-sm) var(--space-md);
+      font-weight: 700;
+      font-size: 0.9375rem;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      text-decoration: none;
+      transition: transform var(--dur-short) var(--ease-bounce), box-shadow var(--dur-short) var(--ease-out), background-color var(--dur-micro) var(--ease-out);
+    }
+    .btn:hover { transform: var(--pop-scale); }
+    .btn:active { transform: scale(0.97); }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--on-primary);
+      box-shadow: var(--shadow-pink);
+    }
+    .btn-primary:hover {
+      box-shadow: var(--shadow-pink-deep);
+    }
+
+    .btn-secondary {
+      background: var(--secondary);
+      color: var(--on-primary);
+      box-shadow: var(--shadow-grape);
+    }
+
+    .btn-sky {
+      background: var(--tertiary);
+      color: #ffffff;
+      box-shadow: var(--shadow-sky);
+    }
+
+    .btn-outline {
+      background: var(--surface-container-low);
+      color: var(--on-surface);
+      border: 2px solid var(--outline-variant);
+    }
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-active-year {
+      background: var(--primary) !important;
+      color: var(--on-primary) !important;
+      box-shadow: var(--shadow-pink) !important;
+      transform: scale(1.04);
+    }
+
+    .btn-sm {
+      padding: var(--space-xs) var(--space-md);
+      font-size: 0.8125rem;
+    }
+
+    .tag {
+      border-radius: var(--rounded-full);
+      padding: 0.2rem 0.65rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .tag-pink {
+      background: var(--primary-container);
+      color: var(--on-primary-container);
+    }
+    .tag-grape {
+      background: #ede4f7;
+      color: var(--secondary);
+    }
+    .tag-sky {
+      background: #e1f5fe;
+      color: #0277bd;
+    }
+    .tag-green {
+      background: #e8f5e9;
+      color: var(--positive);
+    }
+    .tag-amber {
+      background: #fff3e0;
+      color: var(--warning);
+    }
+
+    /* Dashboard overview metrics */
+    .metrics-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+      gap: var(--space-md);
+    }
+    .metric-card {
+      background: var(--surface-container-low);
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+      border-top: 4px solid var(--primary);
+    }
+    .metric-card.green { border-top-color: var(--positive); }
+    .metric-card.grape { border-top-color: var(--secondary); }
+    .metric-card.sky { border-top-color: var(--tertiary); }
+    .metric-card.amber { border-top-color: var(--warning); }
+
+    .metric-val {
+      font-family: var(--font-label);
+      font-weight: 900;
+      font-size: 1.85rem;
+      line-height: 1.1;
+      color: var(--on-surface);
+    }
+    .metric-label {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--on-surface-variant);
+    }
+
+    /* Controls header */
+    .control-deck {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      background: var(--surface-container-low);
+      border-radius: var(--rounded);
+      padding: var(--space-md) var(--space-lg);
+      box-shadow: var(--shadow-card);
+    }
+
+    .deck-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+    }
+
+    .nav-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+      background: var(--surface-container);
+      padding: 0.3rem;
+      border-radius: var(--rounded-full);
+    }
+    .nav-pill {
+      border: none;
+      background: transparent;
+      padding: 0.45rem 1rem;
+      border-radius: var(--rounded-full);
+      font-weight: 700;
+      font-size: 0.875rem;
+      cursor: pointer;
+      color: var(--on-surface-variant);
+      transition: all var(--dur-short) var(--ease-bounce);
+    }
+    .nav-pill:hover {
+      color: var(--primary);
+      background: var(--surface-container-high);
+    }
+    .nav-pill.active {
+      background: var(--primary);
+      color: var(--on-primary);
+      box-shadow: var(--shadow-pink);
+    }
+
+    /* Filter pills */
+    .filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+    }
+    .filter-btn {
+      border: 1px solid var(--outline-variant);
+      background: var(--surface-container-low);
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--rounded-full);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--on-surface-variant);
+      cursor: pointer;
+      transition: all var(--dur-micro) var(--ease-out);
+    }
+    .filter-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    .filter-btn.active {
+      background: var(--secondary);
+      border-color: var(--secondary);
+      color: #ffffff;
+      box-shadow: var(--shadow-grape);
+    }
+
+    /* Audio controls bar */
+    .audio-config-strip {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-md);
+      background: var(--surface-container);
+      padding: var(--space-sm) var(--space-md);
+      border-radius: var(--rounded);
+      font-size: 0.875rem;
+    }
+    .audio-config-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+    .audio-config-item label {
+      font-weight: 700;
+      color: var(--on-surface-variant);
+      font-size: 0.8125rem;
+    }
+    .config-select {
+      background: var(--surface-container-low);
+      border: 1.5px solid var(--outline-variant);
+      border-radius: var(--rounded-full);
+      padding: 0.25rem 0.75rem;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--on-surface);
+      cursor: pointer;
+    }
+    .config-select:focus {
+      border-color: var(--primary);
+      outline: none;
+    }
+
+    /* Question Grid & Cards */
+    .questions-container {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    .q-card {
+      background: var(--surface-container-low);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      box-shadow: var(--shadow-card);
+      border: 2px solid transparent;
+      transition: border-color var(--dur-short) var(--ease-out), box-shadow var(--dur-short) var(--ease-out);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    .q-card.answered-correct {
+      border-color: var(--positive);
+      background: linear-gradient(180deg, #ffffff 0%, #f4fbf6 100%);
+    }
+    .q-card.answered-wrong {
+      border-color: var(--error);
+      background: linear-gradient(180deg, #ffffff 0%, #fef5f5 100%);
+    }
+    .q-card.highlighted {
+      box-shadow: var(--shadow-pink-deep);
+    }
+
+    .q-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-sm);
+      border-bottom: 1.5px dashed var(--outline-variant);
+      padding-bottom: var(--space-sm);
+    }
+    .q-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+    }
+    .q-num-badge {
+      font-family: var(--font-label);
+      font-weight: 900;
+      background: var(--on-surface);
+      color: #ffffff;
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--rounded-full);
+      font-size: 0.875rem;
+    }
+
+    .q-body {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+
+    .q-prompt-box {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+      background: var(--surface-container);
+      padding: var(--space-md);
+      border-radius: var(--rounded);
+    }
+    .q-prompt-text {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--on-surface);
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+    .q-phonics-display {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 900;
+      color: var(--secondary);
+      letter-spacing: 0.05em;
+      background: #ffffff;
+      padding: 0.2rem 1rem;
+      border-radius: var(--rounded);
+      border: 2px dashed var(--secondary);
+    }
+
+    /* Audio Play Button on Card */
+    .audio-play-bar {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+    }
+    .btn-play {
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      border-radius: var(--rounded-full);
+      padding: 0.6rem 1.4rem;
+      font-weight: 800;
+      font-size: 0.95rem;
+      cursor: pointer;
+      box-shadow: var(--shadow-pink);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all var(--dur-short) var(--ease-bounce);
+    }
+    .btn-play:hover {
+      box-shadow: var(--shadow-pink-deep);
+      transform: scale(1.04);
+    }
+    .btn-play.playing {
+      background: #c53030;
+      box-shadow: 0 4px 16px rgb(197 48 48 / 0.3);
+      animation: pulsePlay 1.4s infinite;
+    }
+    @keyframes pulsePlay {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+
+    .waveform-indicator {
+      display: none;
+      align-items: center;
+      gap: 3px;
+      height: 20px;
+    }
+    .waveform-indicator.active {
+      display: inline-flex;
+    }
+    .wave-bar {
+      width: 3.5px;
+      background: var(--primary);
+      border-radius: 999px;
+      animation: waveMotion 0.8s ease-in-out infinite alternate;
+    }
+    .wave-bar:nth-child(2) { animation-delay: 0.2s; height: 16px; }
+    .wave-bar:nth-child(3) { animation-delay: 0.4s; height: 12px; }
+    .wave-bar:nth-child(4) { animation-delay: 0.1s; height: 18px; }
+    @keyframes waveMotion {
+      0% { height: 4px; }
+      100% { height: 18px; }
+    }
+
+    /* 3-Option Grid matching 2B pencil answer card format */
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+      gap: var(--space-md);
+    }
+
+    .option-card {
+      background: var(--surface-container-low);
+      border: 2px solid var(--outline-variant);
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: var(--space-sm);
+      position: relative;
+      transition: all var(--dur-short) var(--ease-bounce);
+      user-select: none;
+    }
+    .option-card:hover:not(.locked) {
+      border-color: var(--primary);
+      transform: var(--lift);
+      box-shadow: var(--shadow-pink);
+    }
+    .option-card:active:not(.locked) {
+      transform: scale(0.98);
+    }
+
+    .option-card.selected {
+      border-color: var(--secondary);
+      background: #f7f0fc;
+      box-shadow: var(--shadow-grape);
+    }
+    .option-card.correct {
+      border-color: var(--positive) !important;
+      background: #e8f5e9 !important;
+      box-shadow: 0 4px 16px rgb(31 138 76 / 0.25) !important;
+    }
+    .option-card.wrong {
+      border-color: var(--error) !important;
+      background: #ffebee !important;
+      box-shadow: 0 4px 16px rgb(197 48 48 / 0.2) !important;
+      opacity: 0.85;
+    }
+
+    /* 2B Pencil Bubble */
+    .bubble-2b {
+      width: 32px;
+      height: 32px;
+      border-radius: 9999px;
+      border: 2.5px solid var(--on-surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 0.95rem;
+      color: var(--on-surface);
+      background: #ffffff;
+      transition: all var(--dur-micro) var(--ease-out);
+    }
+    .option-card.selected .bubble-2b {
+      background: var(--on-surface);
+      color: #ffffff;
+      box-shadow: inset 0 0 0 2px #ffffff;
+    }
+    .option-card.correct .bubble-2b {
+      background: var(--positive);
+      border-color: var(--positive);
+      color: #ffffff;
+    }
+    .option-card.wrong .bubble-2b {
+      background: var(--error);
+      border-color: var(--error);
+      color: #ffffff;
+    }
+
+    .option-icon-wrapper {
+      width: 72px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface-container);
+      border-radius: var(--rounded);
+      color: var(--primary);
+    }
+    .option-text-main {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--on-surface);
+      line-height: 1.3;
+    }
+    .option-text-sub {
+      font-size: 0.8125rem;
+      color: var(--on-surface-variant);
+      font-weight: 500;
+    }
+
+    /* Result Feedback Banner */
+    .feedback-banner {
+      display: none;
+      padding: var(--space-md);
+      border-radius: var(--rounded);
+      animation: fadeIn 0.3s var(--ease-out);
+    }
+    .feedback-banner.show { display: flex; flex-direction: column; gap: var(--space-sm); }
+    .feedback-banner.correct {
+      background: #e8f5e9;
+      border-left: 5px solid var(--positive);
+      color: #145a32;
+    }
+    .feedback-banner.wrong {
+      background: #ffebee;
+      border-left: 5px solid var(--error);
+      color: #78281f;
+    }
+    .feedback-title {
+      font-weight: 900;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    /* Explanation Drawer */
+    .drawer-content {
+      background: var(--surface-container-low);
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+      border: 1px solid var(--outline-variant);
+      margin-top: var(--space-xs);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .script-box {
+      background: #2e1a28;
+      color: #fdf2f8;
+      padding: var(--space-md);
+      border-radius: var(--rounded);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+    }
+    .script-text {
+      color: #ffd1eb;
+    }
+
+    .explanation-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      font-size: 0.92rem;
+    }
+    .explanation-item strong {
+      color: var(--secondary);
+      font-weight: 800;
+    }
+
+    /* Section Header Break */
+    .section-divider {
+      background: linear-gradient(135deg, #7c52aa 0%, #c2207f 100%);
+      color: #ffffff;
+      padding: var(--space-md) var(--space-lg);
+      border-radius: var(--rounded);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: var(--shadow-grape);
+      margin-top: var(--space-sm);
+    }
+    .section-divider h3 {
+      margin: 0;
+      font-size: 1.25rem;
+      font-weight: 900;
+    }
+    .section-divider span {
+      font-size: 0.85rem;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.2rem 0.75rem;
+      border-radius: var(--rounded-full);
+      font-weight: 700;
+    }
+
+    /* Floating Score / Sticky Summary */
+    .sticky-dock {
+      position: sticky;
+      bottom: var(--space-md);
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border: 2px solid var(--primary-container);
+      border-radius: var(--rounded-full);
+      padding: var(--space-sm) var(--space-lg);
+      box-shadow: var(--shadow-pink-deep);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      margin-top: var(--space-xl);
+    }
+
+    .progress-bar-container {
+      flex: 1;
+      min-width: 160px;
+      background: var(--surface-container-high);
+      height: 12px;
+      border-radius: 9999px;
+      overflow: hidden;
+      position: relative;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+      border-radius: 9999px;
+      width: 0%;
+      transition: width 0.4s var(--ease-out);
+    }
+
+    /* Modal dialog */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(46, 26, 40, 0.6);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      padding: var(--space-md);
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-card {
+      background: #ffffff;
+      border-radius: var(--rounded-lg);
+      max-width: 600px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: var(--space-xl);
+      box-shadow: var(--shadow-pink-deep);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    /* Year archive progress badges */
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: var(--space-sm);
+    }
+    .archive-badge {
+      background: var(--surface-container);
+      border-radius: var(--rounded);
+      padding: var(--space-sm);
+      text-align: center;
+      cursor: pointer;
+      border: 1.5px solid transparent;
+      transition: all var(--dur-micro) var(--ease-out);
+    }
+    .archive-badge:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+    .archive-badge.active {
+      border-color: var(--primary);
+      background: #fff0f7;
+    }
+
+    /* Empty state */
+    .empty-state {
+      text-align: center;
+      padding: var(--space-2xl) var(--space-lg);
+      background: var(--surface-container-low);
+      border-radius: var(--rounded-lg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-md);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Mobile adaptations */
+    @media (max-width: 640px) {
+      .page-grid { padding: var(--space-sm); gap: var(--space-md); }
+      .hero-panel { padding: var(--space-lg) var(--space-md); }
+      .q-card { padding: var(--space-md); }
+      .options-grid { grid-template-columns: 1fr; }
+      .sticky-dock {
+        border-radius: var(--rounded);
+        bottom: var(--space-xs);
+        padding: var(--space-sm);
+      }
+      .display { font-size: 1.6rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-grid">
+
+    <!-- Top Hero Section -->
+    <header class="hero-panel card-pink">
+      <div style="display: flex; flex-direction: column; gap: var(--space-sm);">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-sm);">
+          <span class="tag tag-pink">教育部國民小學學生學習扶助評量 · 科技化篩選測驗</span>
+          <span class="tag tag-grape">國小四年級英語科標準化題庫</span>
+        </div>
+        <h1 class="display">四年級英語篩選測驗 <em>歷屆聽力互動練習</em></h1>
+        <p class="subhead" style="margin: 0; max-width: 80ch;">
+          收錄 <strong>110 至 115 年度完整 6 個年度</strong>（第 1 至 10 題，全卷共 60 題）聽力測驗。每題內建 <strong>Web Speech API 朗讀語音</strong>（支援考試標準 3 遍播音）、擬真 2B 鉛筆塗黑劃記、即時判定對錯、完整英語聽力逐字稿與繁體中文解題分析。
+        </p>
+
+        <!-- Test Instruction Box -->
+        <div style="background: var(--surface-container); border-radius: var(--rounded); padding: var(--space-md); margin-top: var(--space-xs); display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-md); font-size: 0.85rem;">
+          <div>
+            <div style="font-weight: 800; color: var(--primary); margin-bottom: 4px;">📝 聽力測驗題型結構 (共10題，佔40%)</div>
+            <div>• <strong>一、聽辨語音</strong> (第 1–3 題)：字母發音與短母音拼讀 (12%)</div>
+            <div>• <strong>二、聽辨單字</strong> (第 4–6 題)：常用生活與文具食物字詞 (12%)</div>
+            <div>• <strong>三、聽辨常用語/句子</strong> (第 7–10 題)：課室用語與生活問答 (16%)</div>
+          </div>
+          <div>
+            <div style="font-weight: 800; color: var(--secondary); margin-bottom: 4px;">🎯 擬真作答說明</div>
+            <div>• <strong>三選一單選題</strong>：點擊選項即模擬 2B 鉛筆塗黑劃記。</div>
+            <div>• <strong>標準三遍播音</strong>：每題皆提供語音朗讀，可隨時重聽。</div>
+            <div>• <strong>智慧解析</strong>：作答後立刻查看英聽逐字稿與中文詳解。</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Score & Statistics Dashboard -->
+    <section class="metrics-bar" id="metricsBar" aria-label="測驗即時統計">
+      <div class="metric-card">
+        <span class="metric-label">目前年度得分</span>
+        <div class="metric-val" id="yearScoreDisplay">0 / 40 <span style="font-size: 1rem; color: var(--on-surface-variant);">分</span></div>
+        <span class="label-badge" style="color: var(--primary);" id="yearPercentDisplay">正確率 0%</span>
+      </div>
+      <div class="metric-card green">
+        <span class="metric-label">本年度答對題數</span>
+        <div class="metric-val" id="yearCorrectDisplay" style="color: var(--positive);">0 <span style="font-size: 1rem; color: var(--on-surface-variant);">/ 10 題</span></div>
+        <span class="label-badge" style="color: var(--positive);" id="yearAnsweredDisplay">已作答 0 題</span>
+      </div>
+      <div class="metric-card grape">
+        <span class="metric-label">全 6 年度總進度 (60題)</span>
+        <div class="metric-val" id="totalProgressDisplay">0 <span style="font-size: 1rem; color: var(--on-surface-variant);">/ 60 題</span></div>
+        <span class="label-badge" style="color: var(--secondary);" id="totalAccuracyDisplay">全卷答對 0 題</span>
+      </div>
+      <div class="metric-card amber">
+        <span class="metric-label">語音狀態 / 播音模式</span>
+        <div class="metric-val" style="font-size: 1.35rem; color: var(--warning);" id="speechEngineStatus">Web Speech 正常</div>
+        <span class="label-badge" style="color: var(--warning);" id="speechSettingBadge">標準 3 遍 · 0.85x</span>
+      </div>
+    </section>
+
+    <!-- 6-Year Overview Badges -->
+    <section class="card" style="padding: var(--space-md);" aria-label="歷屆年度答題概覽">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-sm); flex-wrap: wrap; gap: var(--space-xs);">
+        <div style="font-weight: 800; font-size: 0.95rem; color: var(--on-surface);">歷屆 6 個年度練習狀況快捷導覽</div>
+        <button class="btn btn-sm btn-outline" onclick="openResetModal()" type="button">重設作答紀錄</button>
+      </div>
+      <div class="archive-grid" id="archiveBadgesGrid">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- Interactive Controls Deck (Year switcher, Filters, Audio Settings) -->
+    <section class="control-deck">
+      <div class="deck-row">
+        <!-- Year Tabs -->
+        <div>
+          <span style="font-weight: 800; font-size: 0.8125rem; color: var(--on-surface-variant); display: block; margin-bottom: 4px;">選擇測驗年度：</span>
+          <div class="nav-pills" id="yearTabs">
+            <button class="nav-pill active" onclick="switchYear('110')" type="button" id="tab-110">110 年度</button>
+            <button class="nav-pill" onclick="switchYear('111')" type="button" id="tab-111">111 年度</button>
+            <button class="nav-pill" onclick="switchYear('112')" type="button" id="tab-112">112 年度</button>
+            <button class="nav-pill" onclick="switchYear('113')" type="button" id="tab-113">113 年度</button>
+            <button class="nav-pill" onclick="switchYear('114')" type="button" id="tab-114">114 年度</button>
+            <button class="nav-pill" onclick="switchYear('115')" type="button" id="tab-115">115 年度</button>
+            <button class="nav-pill" onclick="switchYear('ALL')" type="button" id="tab-ALL">全年度 60 題練習</button>
+          </div>
+        </div>
+
+        <!-- Mode Toggle -->
+        <div>
+          <span style="font-weight: 800; font-size: 0.8125rem; color: var(--on-surface-variant); display: block; margin-bottom: 4px;">答題模式：</span>
+          <div style="display: flex; gap: var(--space-xs);">
+            <button class="btn btn-sm btn-primary" id="modeInstantBtn" onclick="setMode('instant')" type="button">即時解析模式</button>
+            <button class="btn btn-sm btn-outline" id="modeExamBtn" onclick="setMode('exam')" type="button">模擬考試模式</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filters & Audio Config -->
+      <div class="deck-row" style="border-top: 1px solid var(--outline-variant); padding-top: var(--space-sm);">
+        <div class="filter-pills" id="filterPills">
+          <button class="filter-btn active" onclick="setCategoryFilter('all')" type="button" id="filt-all">全部題目</button>
+          <button class="filter-btn" onclick="setCategoryFilter('sec1')" type="button" id="filt-sec1">聽辨語音 (1-3題)</button>
+          <button class="filter-btn" onclick="setCategoryFilter('sec2')" type="button" id="filt-sec2">聽辨單字 (4-6題)</button>
+          <button class="filter-btn" onclick="setCategoryFilter('sec3')" type="button" id="filt-sec3">聽辨常用語 (7-10題)</button>
+          <button class="filter-btn" onclick="setCategoryFilter('wrong')" type="button" id="filt-wrong">只看錯題</button>
+          <button class="filter-btn" onclick="setCategoryFilter('unanswered')" type="button" id="filt-unanswered">未作答題</button>
+        </div>
+
+        <!-- Audio Preferences -->
+        <div class="audio-config-strip">
+          <div class="audio-config-item">
+            <label for="speedSelect">語速：</label>
+            <select id="speedSelect" class="config-select" onchange="changeSpeechRate(this.value)">
+              <option value="0.7">0.7x 慢速助聽</option>
+              <option value="0.85" selected>0.85x 考試標準</option>
+              <option value="1.0">1.0x 正常語速</option>
+            </select>
+          </div>
+          <div class="audio-config-item">
+            <label for="repeatSelect">播音次數：</label>
+            <select id="repeatSelect" class="config-select" onchange="changeSpeechRepeat(this.value)">
+              <option value="3" selected>每題播放 3 遍 (標準)</option>
+              <option value="1">單次播放 1 遍 (快速)</option>
+            </select>
+          </div>
+          <button class="btn btn-sm btn-sky" onclick="testBrowserAudio()" type="button" title="點擊測試瀏覽器語音功能">
+            🔊 試聽設備
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Questions Stream -->
+    <main id="questionsStream" class="questions-container" aria-live="polite">
+      <!-- Injected by JavaScript -->
+    </main>
+
+    <!-- Sticky Bottom Dock: Progress & Quick Actions -->
+    <aside class="sticky-dock" id="stickyDock">
+      <div style="display: flex; align-items: center; gap: var(--space-md); flex: 1;">
+        <div style="font-weight: 800; font-size: 0.9rem; color: var(--on-surface); min-width: 90px;" id="dockStatusText">
+          進度：0 / 10 題
+        </div>
+        <div class="progress-bar-container" title="作答進度">
+          <div class="progress-bar-fill" id="dockProgressFill"></div>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: var(--space-sm);">
+        <button class="btn btn-sm btn-outline" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" type="button">
+          ↑ 回頂端
+        </button>
+        <button class="btn btn-sm btn-secondary" onclick="exportQuizReport()" type="button">
+          📥 匯出成績單
+        </button>
+        <button class="btn btn-sm btn-primary" id="examSubmitBtn" style="display: none;" onclick="submitExamMode()" type="button">
+          批改試卷 (交卷)
+        </button>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- Reset Confirmation Modal -->
+  <div class="modal-overlay" id="resetModal">
+    <div class="modal-card">
+      <h3 class="headline" style="color: var(--primary);">⚠️ 確定重設測驗紀錄？</h3>
+      <p style="color: var(--on-surface-variant); margin: 0;">
+        您可以選擇清除「目前選擇的年度紀錄」或「全部 6 個年度的所有作答進度與得分」。重設後將無法復原。
+      </p>
+      <div style="display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-sm);">
+        <button class="btn btn-primary" onclick="confirmReset('current')" type="button">清除目前年度作答紀錄</button>
+        <button class="btn btn-secondary" onclick="confirmReset('all')" type="button">清除全部 60 題所有紀錄</button>
+        <button class="btn btn-outline" onclick="closeResetModal()" type="button">取消返回</button>
+      </div>
+    </div>
+  </div>
+
+  <api-shim></api-shim>
+  <script>
+    /* =====================================================================
+       四年級英語篩選測驗 (110–115年度) 聽力完整 60 題資料庫
+       嚴格符合教育部國教署學習扶助四年級標準化評量指標
+       ===================================================================== */
+    const QUIZ_DATA = [
+      // ================= 110 年度 (10 題) =================
+      {
+        id: "110-1",
+        year: "110",
+        num: 1,
+        sectionId: 1,
+        sectionName: "一、聽辨語音",
+        weight: 4,
+        prompt: "請依據所聽到的發音，選出最適合的拼字：f__",
+        phonicsDisplay: "f __",
+        speechText: "Fab. Fab. Fab.",
+        speechTarget: "Fab",
+        options: [
+          { idx: 1, text: "ab (fab)", sub: "/fæb/ 短母音 a" },
+          { idx: 2, text: "ob (fob)", sub: "/fɑːb/ 短母音 o" },
+          { idx: 3, text: "ib (fib)", sub: "/fɪb/ 短母音 i" }
+        ],
+        answer: 1,
+        transcript: "Fab. Fab. Fab.",
+        translation: "發音為：Fab（虛擬字/詞）",
+        targetPoint: "聽辨短母音 a (/æ/) 與結尾無聲雙唇塞音 b (/b/)",
+        explanation: "聽力音檔播出三次「Fab」。開頭子音為 /f/，接著是短母音 /æ/ 與結尾子音 /b/，因此字尾應為 ab，組成 fab。選項 (2) fob 為短母音 /ɑː/，選項 (3) fib 為短母音 /ɪ/。"
+      },
+      {
+        id: "110-2",
+        year: "110",
+        num: 2,
+        sectionId: 1,
+        sectionName: "一、聽辨語音",
+        weight: 4,
+        prompt: "請依據所聽到的發音，選出最適合的開頭字母：__en",
+        phonicsDisplay: "__ en",
+        speechText: "Zen. Zen. Zen.",
+        speechTarget: "Zen",
+        options: [
+          { idx: 1, text: "Z (Zen)", sub: "濁摩擦音 /z/" },
+          { idx: 2, text: "T (Ten)", sub: "無聲塞音 /t/" },
+          { idx: 3, text: "P (Pen)", sub: "無聲雙唇音 /p/" }
+        ],
+        answer: 1,
+        transcript: "Zen. Zen. Zen.",
+        translation: "發音為：Zen",
+        targetPoint: "聽辨字首濁子音 /z/ 與常見字首 /t/、/p/ 的區別",
+        explanation: "聽力音檔播出三次「Zen」。開頭為聲帶振動的摩擦音 /z/，接短母音與鼻音 en (/ɛn/)。選項 (2) Ten 的開頭為無聲塞音 /t/，選項 (3) Pen 開頭為無聲爆破音 /p/。故正確答案為 (1) Z。"
+      },
+      {
+        id: "110-3",
+        year: "110",
+        num: 3,
+        sectionId: 1,
+        sectionName: "一、聽辨語音",
+        weight: 4,
+        prompt: "請依據所聽到的發音，選出最適合的拼字：w__",
+        phonicsDisplay: "w __",
+        speechText: "Wap. Wap. Wap.",
+        speechTarget: "Wap",
+        options: [
+          { idx: 1, text: "ap (wap)", sub: "/wæp/ 短母音 a" },
+          { idx: 2, text: "op (wop)", sub: "/wɑːp/ 短母音 o" },
+          { idx: 3, text: "ip (wip)", sub: "/wɪp/ 短母音 i" }
+        ],
+        answer: 1,
+        transcript: "Wap. Wap. Wap.",
+        translation: "發音為：Wap",
+        targetPoint: "聽辨半母音 w- 接短母音 a (/æ/) 與字尾 p (/p/)",
+        explanation: "音檔播出三次「Wap」。半母音 /w/ 加上短母音 /æ/ 與無聲雙唇塞音 /p/，拼出 wap (/wæp/)。選項 (2) wop 母音為 /ɑː/，選項 (3) wip 母音為 /ɪ/。"
+      },
+      {
+        id: "110-4",
+        year: "110",
+        num: 4,
+        sectionId: 2,
+        sectionName: "二、聽辨單字",
+        weight: 4,
+        prompt: "請依據所聽到的單字，選出最適合的圖片或項目：",
+        speechText: "Milk. Milk. Milk.",
+        speechTarget: "milk",
+        options: [
+          { idx: 1, text: "milk", sub: "🥛 牛奶 / 鮮奶" },
+          { idx: 2, text: "water", sub: "💧 開水 / 飲用水" },
+          { idx: 3, text: "juice", sub: "🧃 果汁" }
+        ],
+        answer: 1,
+        transcript: "Milk. Milk. Milk.",
+        translation: "單字為：milk（牛奶）",
+        targetPoint: "四年級必備常見飲品單字辨識",
+        explanation: "音檔播出「milk」，意思是「牛奶」，字首音為 /m/。(2) water 是「水」，(3) juice 是「果汁」。故正確答案為 (1)。"
+      },
+      {
+        id: "110-5",
+        year: "110",
+        num: 5,
+        sectionId: 2,
+        sectionName: "二、聽辨單字",
+        weight: 4,
+        prompt: "請依據所聽到的單字，選出最適合的動物項目：",
+        speechText: "Fish. Fish. Fish.",
+        speechTarget: "fish",
+        options: [
+          { idx: 1, text: "bird", sub: "🐦 小鳥" },
+          { idx: 2, text: "fish", sub: "🐟 魚" },
+          { idx: 3, text: "cat", sub: "🐱 貓咪" }
+        ],
+        answer: 2,
+        transcript: "Fish. Fish. Fish.",
+        translation: "單字為：fish（魚）",
+        targetPoint: "常見動物單字與字首 /f/、字尾 /ʃ/ 聽辨",
+        explanation: "音檔播出「fish」，發音為 /fɪʃ/，意思是「魚」。(1) bird 是「小鳥」，(3) cat 是「小貓」。故正確答案為 (2)。"
+      },
+      {
+        id: "110-6",
+        year: "110",
+        num: 6,
+        sectionId: 2,
+        sectionName: "二、聽辨單字",
+        weight: 4,
+        prompt: "請依據所聽到的單字，選出最適合的顏色項目：",
+        speechText: "Green. Green. Green.",
+        speechTarget: "green",
+        options: [
+          { idx: 1, text: "red", sub: "🔴 紅色" },
+          { idx: 2, text: "green", sub: "🟢 綠色" },
+          { idx: 3, text: "yellow", sub: "🟡 黃色" }
+        ],
+        answer: 2,
+        transcript: "Green. Green. Green.",
+        translation: "單字為：green（綠色）",
+        targetPoint: "常見顏色單字與 gr- 子音群聽辨",
+        explanation: "音檔播出三次「green」，發音為 /ɡriːn/，意思是「綠色」。(1) red 是紅色，(3) yellow 是黃色。故正確答案為 (2)。"
+      },
+      {
+        id: "110-7",
+        year: "110",
+        num: 7,
+        sectionId: 3,
+        sectionName: "三、聽辨常用語或句子",
+        weight: 4,
+        prompt: "請依據所聽到的日常用語，選出最符合情境的選項：",
+        speechText: "Come here. Come here. Come here.",
+        speechTarget: "Come here.",
+        options: [
+          { idx: 1, text: "招手請人過來 (Come here.)", sub: "過來這裡" },
+          { idx: 2, text: "請同學坐下 (Sit down.)", sub: "坐下" },
+          { idx: 3, text: "請大家起立 (Stand up.)", sub: "起立" }
+        ],
+        answer: 1,
+        transcript: "Come here. Come here. Come here.",
+        translation: "日常用語：Come here.（過來這裡。）",
+        targetPoint: "課室與生活常用祈使句理解",
+        explanation: "「Come here.」意思是「過來這裡」，常用於老師或同儕招手叫對方靠近身旁。(2) 為 Sit down. (坐下)，(3) 為 Stand up. (起立)。故選 (1)。"
+      },
+      {
+        id: "110-8",
+        year: "110",
+        num: 8,
+        sectionId: 3,
+        sectionName: "三、聽辨常用語或句子",
+        weight: 4,
+        prompt: "請依據所聽到的課堂指令，選出正確的動作：",
+        speechText: "Take out your book. Take out your book. Take out your book.",
+        speechTarget: "Take out your book.",
+        options: [
+          { idx: 1, text: "打開課本 (Open your book.)", sub: "翻開書本" },
+          { idx: 2, text: "拿出課本 (Take out your book.)", sub: "從書包拿出書" },
+          { idx: 3, text: "闔上課本 (Close your book.)", sub: "蓋上書本" }
+        ],
+        answer: 2,
+        transcript: "Take out your book. Take out your book. Take out your book.",
+        translation: "課室指令：Take out your book.（拿出你的書本。）",
+        targetPoint: "聽辨課室常用片語動詞 Take out",
+        explanation: "「Take out」表示「拿出、取出」，因此「Take out your book.」是「拿出你的書本」。選項 (1) 打開書為 Open your book.，選項 (3) 闔上書為 Close your book.。故正確答案為 (2)。"
+      },
+      {
+        id: "110-9",
+        year: "110",
+        num: 9,
+        sectionId: 3,
+        sectionName: "三、聽辨常用語或句子",
+        weight: 4,
+        prompt: "請依據所聽到的問答句，選出符合描述的物品顏色：",
+        speechText: "What color is it? It's yellow. What color is it? It's yellow. What color is it? It's yellow.",
+        speechTarget: "What color is it? It's yellow.",
+        options: [
+          { idx: 1, text: "黃色的雨傘 / 物品", sub: "It's yellow. 🟡" },
+          { idx: 2, text: "紅色的蘋果", sub: "It's red. 🔴" },
+          { idx: 3, text: "藍色的帽子", sub: "It's blue. 🔵" }
+        ],
+        answer: 1,
+        transcript: "What color is it? It's yellow.",
+        translation: "問答：它是什麼顏色？它是黃色的。",
+        targetPoint: "詢問顏色問句「What color is it?」及回答句型的聽解",
+        explanation: "對話中問「What color is it?」（它是什麼顏色？），回答者清楚說明「It's yellow.」（它是黃色的）。因此應選擇黃色的物品。故選 (1)。"
+      },
+      {
+        id: "110-10",
+        year: "110",
+        num: 10,
+        sectionId: 3,
+        sectionName: "三、聽辨常用語或句子",
+        weight: 4,
+        prompt: "請依據所聽到的對話，選出正確的對應動物：",
+        speechText: "What's that? It's a bird. What's that? It's a bird. What's that? It's a bird.",
+        speechTarget: "What's that? It's a bird.",
+        options: [
+          { idx: 1, text: "一隻停在樹上的小鳥 (bird)", sub: "It's a bird. 🐦" },
+          { idx: 2, text: "一隻在地上奔跑的狗 (dog)", sub: "It's a dog. 🐶" },
+          { idx: 3, text: "一隻在沙發上的貓咪 (cat)", sub: "It's a cat. 🐱" }
+        ],
+        answer: 1,
+        transcript: "What's that? It's a bird.",
+        translation: "問答：那是什麼？那是一隻鳥。",
+        targetPoint: "指示代名詞問句「What's that?」及動物名稱聽辨",
+        explanation: "問句「What's that?」詢問遠處物體，回答為「It's a bird.」（那是一隻小鳥）。對照選項只有 (1) 是小鳥 (bird)。故選 (1)。"
+      },
+
+      // ================= 111 年度 (10 題) =================
+      {
+        id: "111-1",
+        year: "111",
+        num: 1,
+        sectionId: 1,
+        sectionName: "一、聽辨語音",
+        weight: 4,
+        prompt: "1. w__ (請依所聽發音選出空格拼字)",
+        phonicsDisplay: "w __",
+        speechText: "Wed. Wed. Wed.",
+        speechTarget: "Wed",
+        options: [
+          { idx: 1, text: "(1) at", sub: "拼讀為 wat (/wɑːt/)" },
+          { idx: 2, text: "(2) ed", sub: "拼讀為 wed (/wɛd/)" },
+          { idx: 3, text: "(3) ud", sub: "拼讀為 wud (/wʌd/)" }
+        ],
+        answer: 2,
+        transcript: "Wed. Wed. Wed.",
+        translation: "題目發音為：wed（音標 /wɛd/）",
+        targetPoint: "短母音 e (/ɛ/) 與結尾濁子音 d (/d/) 的拼讀辨識",
+        explanation: "音檔播出「wed」。開頭是半母音 /w/，接著是短母音 /ɛ/，字尾是舌尖濁塞音 /d/，合起來為 wed。官方答案卷解答為 (2) ed。"
+      },
+      {
+        id: "111-2",
+        year: "111",
+        num: 2,
+        sectionId: 1,
+        sectionName: "一、聽辨語音",
+        weight: 4,
+        prompt: "2. __ap (請依所聽發音選出開頭子音)",
+        phonicsDisplay: "__ ap",
+        speechText: "Sap. Sap. Sap.",
+        speechTarget: "Sap",
+        options: [
+          { idx: 1, text: "(1) f", sub: "拼讀為 fap (/fæp/)" },
+          { idx: 2, text: "(2) s", sub: "拼讀為 sap (/sæp/)" },
+          { idx: 3, text: "(3) c", sub: "拼讀為 cap (/kæp/)" }
+        ],
+        answer: 2,
+        transcript: "Sap. Sap. Sap.",
+        translation: "題目發音為：sap（音標 /sæp/）",
+        targetPoint: "字首無聲齒齦摩擦音 /s/ 與唇齒音 /f/、軟顎塞音 /k/ 區辨",
+        explanation: "音檔播出三次「sap」。字首發出如同蛇嘶嘶聲的摩擦音 /s/，加上 -ap 構成 sap。選項 (1) f 是齒唇接觸的摩擦音 /f/，選項 (3) c 發舌後塞音 /k/。官方答案卷為 (2) s。"
+      },
+      {
+        id: "111-3",
+        year: "111",
+        num: 3,
+        sectionId: 1,
+        sectionName: "一、聽辨語音",
+        weight: 4,
+        prompt: "3. r__g (請依所聽發音選出中間母音字母)",
+        phonicsDisplay: "r __ g",
+        speechText: "Rog. Rog. Rog.",
+        speechTarget: "Rog",
+        options: [
+          { idx: 1, text: "(1) e", sub: "拼讀為 reg (/rɛɡ/)" },
+          { idx: 2, text: "(2) a", sub: "拼讀為 rag (/ræɡ/)" },
+          { idx: 3, text: "(3) o", sub: "拼讀為 rog (/rɑːɡ/ 或 /rɒɡ/)" }
+        ],
+        answer: 3,
+        transcript: "Rog. Rog. Rog.",
+        translation: "題目發音為：rog（音標 /rɑːɡ/）",
+        targetPoint: "短母音 o (/ɑː/ 或 /ɒ/) 的發音聽辨",
+        explanation: "音檔播出「rog」。中間為短母音字母 o，嘴型較圓開闊，發 /ɑː/ 或 /ɒ/ 音，與字首 r 及字尾 g 拼成 rog。選項 (1) reg 為短母音 /ɛ/，選項 (2) rag 為扁嘴短母音 /æ/。官方答案卷為 (3) o。"
+      },
+      {
+        id: "111-4",
+        year: "111",
+        num: 4,
+        sectionId: 2,
+        sectionName: "二、聽辨單字",
+        weight: 4,
+        prompt: "4. 請依據聽到的單字選出最適合的圖片：",
+        speechText: "Egg. Egg. Egg.",
+        speechTarget: "egg",
+        options: [
+          { idx: 1, text: "egg", sub: "🥚 雞蛋" },
+          { idx: 2, text: "apple", sub: "🍎 蘋果" },
+          { idx: 3, text: "ball", sub: "⚽ 球" }
+        ],
+        answer: 1,
+        transcript: "Egg. Egg. Egg.",
+        translation: "單字為：egg（雞蛋）",
+        targetPoint: "常見早餐食物單字辨識",
+        explanation: "音檔清楚播出三次「egg」，發音為 /ɛɡ/，意思是「雞蛋」。官方答案卷為 (1)。"
+      },
+      {
+        id: "111-5",
+        year: "111",
+        num: 5,
+        sectionId: 2,
+        sectionName: "二、聽辨單字",
+        weight: 4,
+        prompt: "5. 請依據聽到的單字選出最適合的圖片：",
+        speechText: "Bird. Bird. Bird.",
+        speechTarget: "bird",
+        options: [
+          { idx: 1, text: "bird", sub: "🐦 小鳥" },
+          { idx: 2, text: "cat", sub: "🐱 貓咪" },
+          { idx: 3, text: "dog", sub: "🐶 小狗" }
+        ],
+        answer: 1,
+        transcript: "Bird. Bird. Bird.",
+        translation: "單字為：bird（小鳥）",
+        targetPoint: "基礎動物單字 bird 之聽辨",
+        explanation: "音檔播出三次「bird」，發音為 /bɜːrd/，意為「小鳥」。選項 (1) 為鳥，(2) 為貓，(3) 為狗。官方答案卷為 (1)。"
+      },
+      {
+        id: "111-6",
+        year: "111",
+        num: 6,
+        sectionId: 2,
+        sectionName: "二、聽辨單字",
+        weight: 4,
+        prompt: "6. 請依據聽到的單字選出最適合的文具圖片：",
+        speechText: "Marker. Marker. Marker.",
+        speechTarget: "marker",
+        options: [
+          { idx: 1, text: "marker", sub: "🖍️ 彩色筆 / 麥克筆" },
+          { idx: 2, text: "pencil", sub: "✏️ 鉛筆" },
+          { idx: 3, text: "ruler", sub: "📏 直尺" }
+        ],
+        answer: 1,
+        transcript: "Marker. Marker. Marker.",
+        translation: "單字為：marker（彩色筆 / 白板筆 / 麥克筆）",
+        targetPoint: "學校教室文具單字 marker 之聽辨",
+        explanation: "音檔播出三次「marker」，發音為 /ˈmɑːr.kər/，指的是「彩色筆或麥克筆」。(2) pencil 是鉛筆，(3) ruler 是直尺。故選 (1)。"
+      },
+      {
+        id: "111-7",
+        year: "111",
+        num: 7,
+        sectionId: 3,
+        sectionName: "三、聽辨常用語或句子",
+        weight: 4,
+        prompt: "7. 請依據聽到的常用語選出最符合的圖片情境：",
+        speechText: "Let's play. Let's play. Let's play.",
+        speechTarget: "Let's play.",
+        options: [
+          { idx: 1, text: "道別揮手 (Goodbye.)", sub: "再見" },
+          { idx: 2, text: "安靜坐好 (Sit down.)", sub: "坐好" },
+          { idx: 3, text: "同伴邀約一起踢球玩耍 (Let's play.)", sub: "我們一起玩吧！" }
+        ],
+        answer: 3,
+        transcript: "Let's play. Let's play. Let's play.",
+        translation: "常用語：Let's play.（我們一起玩吧！）",
+        targetPoint: "社交邀約用語「Let's play.」之理解",
+        explanation: "「Let's」是「Let us」的縮寫，意思是「讓我們一起...」；play 是「玩耍、運動」，整句為「我們一起玩吧！」。官方答案卷為 (3)。"
+      },
+      {
+        id: "111-8",
+        year: "111",
+        num: 8,
+        sectionId: 3,
+        sectionName: "三、聽辨常用語或句子",
+        weight: 4,
+        prompt: "8. 請依據聽到的課堂指令選出相符的動作：",
+        speechText: "Put down your hand. Put down your hand. Put down your hand.",
+        speechTarget: "Put down your hand.",
+        options: [
+          { idx: 1, text: "把舉著的手放下來", sub: "Put down your hand. 🙋‍♂️⬇️" },
+          { idx: 2, text: "高舉右手準備發言", sub: "Raise your hand. 🙋" },
+          { idx: 3, text: "用手指摸摸自己的鼻子", sub: "Touch your nose. 👃" }
+        ],
+        answer: 1,
+        transcript: "Put down your hand. Put down your hand. Put down your hand.",
+        translation: "課堂指令：Put down your hand.（請把手放下。）",
+        targetPoint: "相反動作指令 Put down vs Raise 的聽解",
+        explanation: "「Put down」表示「放下」，「your hand」是「你的手」，整句是「請把手放下」。(2) 為舉手 (Raise your hand)。官方答案卷為 (1)。"
+      },
+      {
+        id: "111-9",
+        year: "111",
+        num: 9,
+        sectionId: 3,
+        sectionName: "三、聽辨常用語或句子",
+        weight: 4,
+        prompt: "9. 請依據聽到的對話選出桌上的飲品：",
+        speechText: "What's this? It's milk. What's this? It's milk. What's this? It's milk.",
+        speechTarget: "What's this? It's milk.",
+        options: [
+          { idx: 1, text: "一杯冰水 (water)", sub: "It's water." },
+          { idx: 2, text: "一瓶鮮奶 (milk)", sub: "It's milk. 🥛" },
+          { idx: 3, text: "一杯果汁 (juice)", sub: "It's juice." }
+        ],
+        answer: 2,
+        transcript: "What's this? It's milk.",
+        translation: "對話：這是什麼？這是牛奶。",
+        targetPoint: "問句「What's this?」與答句「It's milk.」之聽力理解",
+        explanation: "問句「What's this?」詢問眼前的物品，答句明確回答「It's milk.」（這是牛奶）。因此正確選項為裝有鮮奶的 (2)。官方答案卷為 (2)。"
+      },
+      {
+        id: "111-10",
+        year: "111",
+        num: 10,
+        sectionId: 3,
+        sectionName: "三、聽辨常用語或句子",
+        weight: 4,
+        prompt: "10. 請依據聽到的問答選出盤子裡擺放的水果：",
+        speechText: "Is it a banana? No, it's not. Is it a banana? No, it's not. Is it a banana? No, it's not.",
+        speechTarget: "Is it a banana? No, it's not.",
+        options: [
+          { idx: 1, text: "一顆紅蘋果 (不是香蕉，符合 No, it's not)", sub: "🍎 蘋果 (不是香蕉)" },
+          { idx: 2, text: "一根黃香蕉 (若為香蕉應答 Yes)", sub: "🍌 香蕉" },
+          { idx: 3, text: "一把黃香蕉", sub: "🍌🍌 香蕉串" }
+        ],
+        answer: 1,
+        transcript: "Is it a banana? No, it's not.",
+        translation: "問答：它是香蕉嗎？不，它不是。",
+        targetPoint: "Yes/No 疑問句的否定回答「No, it's not.」推論理解",
+        explanation: "問句問「Is it a banana?」（它是香蕉嗎？），回答者說「No, it's not.」（不，它不是香蕉！）。因此盤中的水果必定不是香蕉。選項 (1) 為蘋果符合題意。官方答案卷為 (1)。"
+      },
+
+      // ================= 112 年度 (10 題) =================
+      {
+        id: "112-1",
+        year: "112",
+        num: 1,
+        sectionId: 1,
+        sectionName: "一、聽辨語音",
+        weight: 4,
+        prompt: "1. b__g (請依所聽發音選出中間母音字母)",
+        phonicsDisplay: "b __ g",
+        speechText: "Big. Big. Big.",
+        speechTarget: "Big",
+        options: [
+          { idx: 1, text: "(1) i", sub: "拼讀為 big (/bɪɡ/)" },
+          { idx: 2, text: "(2) e", sub: "拼讀為 beg (/bɛɡ/)" },
+          { idx: 3, text: "(3) u", sub: "拼讀為 bug (/bʌɡ/)" }
+        ],
+        answer: 1,
+        transcript: "Big. Big. Big.",
+        translation: "題目發音為：big（音標 /bɪɡ/）",
+        targetPoint: "短母音 i (/ɪ/) 的聽辨與 CVC 拼讀",
+        explanation: "音檔播出「big」。子音 b 接短母音 /ɪ/，字尾為濁塞音 g (/ɡ/)，拼成 big。選項 (2) beg 的母音為 /ɛ/，選項 (3) bug 的母音為 /ʌ/。故選 (1)。"
+      },
+      {
+        id: "112-2",
+        year: "112",
+        num: 2,
+        sectionId: 1,
+        sectionName: "一、聽辨語音",
+        weight: 4,
+        prompt: "2. __op (請依所聽發音選出開頭子音)",
+        phonicsDisplay: "__ op",
+        speechText: "Top. Top. Top.",
+        speechTarget: "Top",
+        options: [
+          { idx: 1, text: "(1) t", sub: "拼讀為 top (/tɑːp/)" },
+          { idx: 2, text: "(2) m", sub: "拼讀為 mop (/mɑːp/)" },
+          { idx: 3, text: "(3) h", sub: "拼讀為 hop (/hɑːp/)" }
+        ],
+        answer: 1,
+        transcript: "Top. Top. Top.",
+        translation: "題目發音為：top（音標 /tɑːp/）",
+        targetPoint: "字首無聲齒齦塞音 /t/ 的爆破音聽辨",
+        explanation: "音檔播出「top」。字首為無聲齒齦爆破音 /t/，接短母音與子音 op。選項 (2) m 為雙唇鼻音 /m/，選項 (3) h 為喉部摩擦氣音 /h/。故選 (1)。"
+      },
+      {
+        id: "112-3",
+        year: "112",
+        num: 3,
+        sectionId: 1,
+        sectionName: "一、聽辨語音",
+        weight: 4,
+        prompt: "3. l__ (請依所聽發音選出字尾組合)",
+        phonicsDisplay: "l __",
+        speechText: "Lip. Lip. Lip.",
+        speechTarget: "Lip",
+        options: [
+          { idx: 1, text: "(1) ip", sub: "拼讀為 lip (/lɪp/ 嘴唇)" },
+          { idx: 2, text: "(2) ap", sub: "拼讀為 lap (/læp/ 大腿面)" },
+          { idx: 3, text: "(3) op", sub: "拼讀為 lop (/lɑːp/)" }
+        ],
+        answer: 1,
+        transcript: "Lip. Lip. Lip.",
+        translation: "題目發音為：lip（音標 /lɪp/）",
+        targetPoint: "字首側音 l- 接 -ip 韻尾的發音聽辨",
+        explanation: "音檔播出「lip」。開頭為舌尖頂上齒齦的側音 /l/，接短母音 /ɪ/ 及結尾 /p/，拼成 lip。選項 (2) lap 為短母音 /æ/，選項 (3) lop 為短母音 /ɑː/。故選 (1)。"
+      },
+      {
+        id: "112-4",
+        year: "112",
+        num: 4,
+        sectionId: 2,
+        sectionName: "二、聽辨單字",
+        weight: 4,
+        prompt: "4. 請依據聽到的單字選出相符的寵物：",
+        speechText: "Dog. Dog. Dog.",
+        speechTarget: "dog",
+        options: [
+          { idx: 1, text: "dog", sub: "🐕 小狗" },
+          { idx: 2, text: "cat", sub: "🐈 小貓" },
+          { idx: 3, text: "pig", sub: "🐖 小豬" }
+        ],
+        answer: 1,
+        transcript: "Dog. Dog. Dog.",
+        translation: "單字為：dog（小狗）",
+        targetPoint: "基礎核心動物單字辨識",
+        explanation: "音檔播出「dog」，意思是「狗」。字首音為 /d/，字尾為 /ɡ/。(2) cat 是貓，(3) pig 是豬。故正確答案為 (1)。"
+      },
+      {
+        id: "112-5",
+        year: "112",
+        num: 5,
+        sectionId: 2,
+        sectionName: "二、聽辨單字",
+        weight: 4,
+        prompt: "5. 請依據聽到的單字選出文具：",
+        speechText: "Pencil. Pencil. Pencil.",
+        speechTarget: "pencil",
+        options: [
+          { idx: 1, text: "pen", sub: "🖊️ 原子筆 / 鋼筆" },
+          { idx: 2, text: "pencil", sub: "✏️ 鉛筆" },
+          { idx: 3, text: "ruler", sub: "📏 直尺" }
+        ],
+        answer: 2,
+        transcript: "Pencil. Pencil. Pencil.",
+        translation: "單字為：pencil（鉛筆）",
+        targetPoint: "雙音節文具單字 pencil 與 pen 的區辨",
+        explanation: "音檔播出「pencil」，發音為雙音節 /ˈpɛn.səl/，指木質石墨鉛筆。(1) pen 是單音節原子筆，(3) ruler 是直尺。故正確答案為 (2)。"
+      },
+      {
+        id: "112-6",
+        year: "112",
+        num: 6,
+        sectionId: 2,
+        sectionName: "二、聽辨單字",
+        weight: 4,
+        prompt: "6. 請依據聽到的單字選出正確的顏色：",
+        speechText: "Red. Red. Red.",
+        speechTarget: "red",
+        options: [
+          { idx: 1, text: "red", sub: "🔴 紅色" },
+          { idx: 2, text: "blue", sub: "🔵 藍色" },
+          { idx: 3, text: "green", sub: "🟢 綠色" }
+        ],
+        answer: 1,
+        transcript: "Red. Red. Red.",
+        translation: "單字為：red（紅色）",
+        targetPoint: "基礎顏色單字 red 聽辨",
+        explanation: "音檔播出「red」，發音為 /rɛd/，意思是「紅色」。官方答案卷第 6 題為 (1)。"
+      },
+      {
+        id: "112-7",
+        year: "112",
+        num: 7,
+        sectionId: 3,
+        sectionName: "三、聽辨常用語或句子",
+        weight: 4,
+        prompt: "7. 請依據聽到的教室指令選出動作：",
+        speechText: "Stand up. Stand up. Stand up.",
+        speechTarget: "Stand up.",
+        options: [
+          { idx: 1, text: "全班起立站好 (Stand up.)", sub: "起立 🧍" },
+          { idx: 2, text: "全班坐下 (Sit down.)", sub: "坐下 🪑" },
+          { idx: 3, text: "大家拍拍手 (Clap your hands.)", sub: "拍手 👏" }
+        ],
+        answer: 1,
+        transcript: "Stand up. Stand up. Stand up.",
+        translation: "指令：Stand up.（起立。）",
+        targetPoint: "日常生活常用動作指令 Stand up",
+        explanation: "「Stand up」意思是「站起來、起立」。學校每堂課上課敬禮第一句就是「Stand up」。(2) 為 Sit down (坐下)。故選 (1)。"
+      },
+      {
+        id: "112-8",
+        year: "112",
+        num: 8,
+        sectionId: 3,
+        sectionName: "三、聽辨常用語或句子",
+        weight: 4,
+        prompt: "8. 請依據聽到的動作指令選出正確動作：",
+        speechText: "Open your book. Open your book. Open your book.",
+        speechTarget: "Open your book.",
+        options: [
+          { idx: 1, text: "翻開課本 (Open your book.)", sub: "打開書本 📖" },
+          { idx: 2, text: "合上課本 (Close your book.)", sub: "闔上書本 📕" },
+          { idx: 3, text: "拿鉛筆寫字 (Write your name.)", sub: "寫字 ✍️" }
+        ],
+        answer: 1,
+        transcript: "Open your book. Open your book. Open your book.",
+        translation: "指令：Open your book.（打開你的書本。）",
+        targetPoint: "動詞片語 Open vs Close 的動作辨識",
+        explanation: "「Open」是打開，「your book」是你的書，「Open your book.」即為翻開課本。(2) 為 Close your book. (闔上書本)。故選 (1)。"
+      },
+      {
+        id: "112-9",
+        year: "112",
+        num: 9,
+        sectionId: 3,
+        sectionName: "三、聽辨常用語或句子",
+        weight: 4,
+        prompt: "9. 請依據聽到的問答選出蘋果的數量：",
+        speechText: "How many apples? Three apples. How many apples? Three apples. How many apples? Three apples.",
+        speechTarget: "How many apples? Three apples.",
+        options: [
+          { idx: 1, text: "2 顆蘋果 (Two apples)", sub: "🍎🍎 2顆" },
+          { idx: 2, text: "3 顆蘋果 (Three apples)", sub: "🍎🍎🍎 3顆" },
+          { idx: 3, text: "5 顆蘋果 (Five apples)", sub: "🍎🍎🍎🍎🍎 5顆" }
+        ],
+        answer: 2,
+        transcript: "How many apples? Three apples.",
+        translation: "問答：有幾顆蘋果？三顆蘋果。",
+        targetPoint: "詢問數量問句「How many...?」與數字 three (3) 的聽解",
+        explanation: "問句問「How many apples?」（有幾顆蘋果？），回答明確指明「Three apples.」（三顆蘋果）。因此正確選項為 3 顆蘋果的 (2)。"
+      },
+      {
+        id: "112-10",
+        year: "112",
+        num: 10,
+        sectionId: 3,
+        sectionName: "三、聽辨常用語或句子",
+        weight: 4,
+        prompt: "10. 請依據聽到的問答句選出相符的動物：",
+        speechText: "Is it a cat? Yes, it is. Is it a cat? Yes, it is. Is it a cat? Yes, it is.",
+        speechTarget: "Is it a cat? Yes, it is.",
+        options: [
+          { idx: 1, text: "一隻貓咪 (cat)", sub: "🐱 Yes, it is. (是貓)" },
+          { idx: 2, text: "一隻小狗 (dog)", sub: "🐶 狗" },
+          { idx: 3, text: "一隻小兔子 (rabbit)", sub: "🐰 兔子" }
+        ],
+        answer: 1,
+        transcript: "Is it a cat? Yes, it is.",
+        translation: "問答：它是一隻貓嗎？是的，它是。",
+        targetPoint: "Yes/No 疑問句之肯定簡答「Yes, it is.」之理解",
+        explanation: "問句「Is it a cat?」（它是貓嗎？），答覆「Yes, it is.」（是的，它是貓）。肯定回答確認該動物就是貓咪 (cat)。故選 (1)。"
+      },
+
+      // ================= 113 年度 (10 題) =================
+      {
+        id: "113-1",
+        year: "113",
+        num: 1,
+        sectionId: 1,
+        sectionName: "一、聽辨語音",
+        weight: 4,
+        prompt: "1. m__p (請依所聽發音選出中間母音字母)",
+        phonicsDisplay: "m __ p",
+        speechText: "Map. Map. Map.",
+        speechTarget: "Map",
+        options: [
+          { idx: 1, text: "(1) a", sub: "拼讀為 map (/mæp/ 地圖)" },
+          { idx: 2, text: "(2) e", sub: "拼讀為 mep (/mɛp/)" },
+          { idx: 3, text: "(3) o", sub: "拼讀為 mop (/mɑːp/ 拖把)" }
+        ],
+        answer: 1,
+        transcript: "Map. Map. Map.",
+        translation: "題目發音為：map（音標 /mæp/）",
+        targetPoint: "短母音 a (/æ/) 與開頭鼻音 m- 的結合發音",
+        explanation: "音檔播出「map」。字首鼻音 m 接短母音 /æ/，字尾為無聲塞音 p，拼成 map。選項 (3) mop 為拖把，短母音發 /ɑː/。故選 (1)。"
+      },
+      {
+        id: "113-2",
+        year: "113",
+        num: 2,
+        sectionId: 1,
+        sectionName: "一、聽辨語音",
+        weight: 4,
+        prompt: "2. __et (請依所聽發音選出開頭子音)",
+        phonicsDisplay: "__ et",
+        speechText: "Pet. Pet. Pet.",
+        speechTarget: "Pet",
+        options: [
+          { idx: 1, text: "(1) w", sub: "拼讀為 wet (/wɛt/ 濕的)" },
+          { idx: 2, text: "(2) p", sub: "拼讀為 pet (/pɛt/ 寵物)" },
+          { idx: 3, text: "(3) n", sub: "拼讀為 net (/nɛt/ 網子)" }
+        ],
+        answer: 2,
+        transcript: "Pet. Pet. Pet.",
+        translation: "題目發音為：pet（音標 /pɛt/）",
+        targetPoint: "字首無聲雙唇爆破音 /p/ 的聽辨",
+        explanation: "音檔播出三次「pet」。雙唇緊閉後爆破的無聲子音 /p/ 接 -et，拼出 pet。選項 (1) wet 字首為半母音 /w/，選項 (3) net 字首為舌尖鼻音 /n/。故選 (2)。"
+      },
+      {
+        id: "113-3",
+        year: "113",
+        num: 3,
+        sectionId: 1,
+        sectionName: "一、聽辨語音",
+        weight: 4,
+        prompt: "3. h__ (請依所聽發音選出字尾組合)",
+        phonicsDisplay: "h __",
+        speechText: "Hot. Hot. Hot.",
+        speechTarget: "Hot",
+        options: [
+          { idx: 1, text: "(1) ot", sub: "拼讀為 hot (/hɑːt/ 熱的)" },
+          { idx: 2, text: "(2) ut", sub: "拼讀為 hut (/hʌt/ 小木屋)" },
+          { idx: 3, text: "(3) et", sub: "拼讀為 het (/hɛt/)" }
+        ],
+        answer: 1,
+        transcript: "Hot. Hot. Hot.",
+        translation: "題目發音為：hot（音標 /hɑːt/）",
+        targetPoint: "短母音字母組合 -ot (/ɑːt/) 的聽辨",
+        explanation: "音檔播出「hot」。喉部氣音 /h/ 加上短母音 /ɑː/ 及無聲塞音 /t/，拼成 hot。選項 (2) hut 的母音為 /ʌ/。故選 (1)。"
+      },
+      {
+        id: "113-4",
+        year: "113",
+        num: 4,
+        sectionId: 2,
+        sectionName: "二、聽辨單字",
+        weight: 4,
+        prompt: "4. 請依據聽到的單字選出相符的水果：",
+        speechText: "Banana. Banana. Banana.",
+        speechTarget: "banana",
+        options: [
+          { idx: 1, text: "apple", sub: "🍎 蘋果" },
+          { idx: 2, text: "banana", sub: "🍌 香蕉" },
+          { idx: 3, text: "papaya", sub: "🍈 木瓜" }
+        ],
+        answer: 2,
+        transcript: "Banana. Banana. Banana.",
+        translation: "單字為：banana（香蕉）",
+        targetPoint: "多音節核心水果單字 banana 之辨識",
+        explanation: "音檔播出三次「banana」，發音為三音節 /bəˈnæn.ə/，意思是「香蕉」。(1) apple 是蘋果，(3) papaya 是木瓜。故選 (2)。"
+      },
+      {
+        id: "113-5",
+        year: "113",
+        num: 5,
+        sectionId: 2,
+        sectionName: "二、聽辨單字",
+        weight: 4,
+        prompt: "5. 請依據聽到的單字選出文具：",
+        speechText: "Ruler. Ruler. Ruler.",
+        speechTarget: "ruler",
+        options: [
+          { idx: 1, text: "ruler", sub: "📏 直尺" },
+          { idx: 2, text: "eraser", sub: "🧼 橡皮擦" },
+          { idx: 3, text: "book", sub: "📖 課本" }
+        ],
+        answer: 1,
+        transcript: "Ruler. Ruler. Ruler.",
+        translation: "單字為：ruler（直尺）",
+        targetPoint: "雙音節文具單字 ruler 之聽辨",
+        explanation: "音檔播出「ruler」，發音為 /ˈruː.lər/，意思是「直尺」。(2) eraser 是橡皮擦，(3) book 是書本。故選 (1)。"
+      },
+      {
+        id: "113-6",
+        year: "113",
+        num: 6,
+        sectionId: 2,
+        sectionName: "二、聽辨單字",
+        weight: 4,
+        prompt: "6. 請依據聽到的單字選出相符的顏色：",
+        speechText: "Blue. Blue. Blue.",
+        speechTarget: "blue",
+        options: [
+          { idx: 1, text: "red", sub: "🔴 紅色" },
+          { idx: 2, text: "blue", sub: "🔵 藍色" },
+          { idx: 3, text: "green", sub: "🟢 綠色" }
+        ],
+        answer: 2,
+        transcript: "Blue. Blue. Blue.",
+        translation: "單字為：blue（藍色）",
+        targetPoint: "子音群 bl- 與長母音 /uː/ 之顏色單字聽辨",
+        explanation: "音檔播出「blue」，發音為 /bluː/，指「藍色」。官方答案卷第 6 題為 (2)。"
+      },
+      {
+        id: "113-7",
+        year: "113",
+        num: 7,
+        sectionId: 3,
+        sectionName: "三、聽辨常用語或句子",
+        weight: 4,
+        prompt: "7. 請依據聽到的問候語選出符合的時間情境：",
+        speechText: "Good morning. Good morning. Good morning.",
+        speechTarget: "Good morning.",
+        options: [
+          { idx: 1, text: "早晨太陽剛升起見面打招呼", sub: "Good morning! 🌅 早安" },
+          { idx: 2, text: "晚上月亮高掛準備睡覺", sub: "Good night! 🌙 晚安" },
+          { idx: 3, text: "放學揮手道別", sub: "Goodbye! 👋 再見" }
+        ],
+        answer: 1,
+        transcript: "Good morning. Good morning. Good morning.",
+        translation: "問候語：Good morning.（早安。）",
+        targetPoint: "日常生活時間問候語 Good morning 之理解",
+        explanation: "「Good morning」意思是「早安」，適用於早上見面時的禮貌問候。(2) 為晚安 (Good night)，(3) 為再見 (Goodbye)。故選 (1)。"
+      },
+      {
+        id: "113-8",
+        year: "113",
+        num: 8,
+        sectionId: 3,
+        sectionName: "三、聽辨常用語或句子",
+        weight: 4,
+        prompt: "8. 請依據聽到的課室指令選出正確動作：",
+        speechText: "Raise your hand. Raise your hand. Raise your hand.",
+        speechTarget: "Raise your hand.",
+        options: [
+          { idx: 1, text: "想要發言先舉手 (Raise your hand.)", sub: "舉手 🙋‍♀️" },
+          { idx: 2, text: "老師請全班放下手 (Put down your hand.)", sub: "放下手 🙅‍♂️" },
+          { idx: 3, text: "為同學鼓掌拍手 (Clap your hands.)", sub: "拍手 👏" }
+        ],
+        answer: 1,
+        transcript: "Raise your hand. Raise your hand. Raise your hand.",
+        translation: "指令：Raise your hand.（請舉手。）",
+        targetPoint: "課堂重要常規指令 Raise your hand 之聽辨",
+        explanation: "「Raise」意為「舉起」，「your hand」是「你的手」，「Raise your hand.」為「請舉手」。故選 (1)。"
+      },
+      {
+        id: "113-9",
+        year: "113",
+        num: 9,
+        sectionId: 3,
+        sectionName: "三、聽辨常用語或句子",
+        weight: 4,
+        prompt: "9. 請依據聽到的問答句選出天空中的物體：",
+        speechText: "What's that? It's a kite. What's that? It's a kite. What's that? It's a kite.",
+        speechTarget: "What's that? It's a kite.",
+        options: [
+          { idx: 1, text: "在空中迎風飄揚的風箏", sub: "It's a kite. 🪁" },
+          { idx: 2, text: "飄在空中的氣球", sub: "It's a balloon. 🎈" },
+          { idx: 3, text: "飛過天空的飛機", sub: "It's an airplane. ✈️" }
+        ],
+        answer: 1,
+        transcript: "What's that? It's a kite.",
+        translation: "問答：那是什麼？那是一隻風箏。",
+        targetPoint: "童玩單字 kite 與問答句型聽解",
+        explanation: "問句「What's that?」詢問遠處物體，回答者說「It's a kite.」（那是一隻風箏）。kite 意為風箏。故正確答案為 (1)。"
+      },
+      {
+        id: "113-10",
+        year: "113",
+        num: 10,
+        sectionId: 3,
+        sectionName: "三、聽辨常用語或句子",
+        weight: 4,
+        prompt: "10. 請依據聽到的對話選出小朋友擅長的能力活動：",
+        speechText: "Can you swim? Yes, I can. Can you swim? Yes, I can. Can you swim? Yes, I can.",
+        speechTarget: "Can you swim? Yes, I can.",
+        options: [
+          { idx: 1, text: "在游泳池游泳 (swim)", sub: "🏊 Yes, I can. (會游泳)" },
+          { idx: 2, text: "在操場賽跑 (run)", sub: "🏃 跑步" },
+          { idx: 3, text: "在舞台跳舞 (dance)", sub: "💃 跳舞" }
+        ],
+        answer: 1,
+        transcript: "Can you swim? Yes, I can.",
+        translation: "問答：你會游泳嗎？是的，我會。",
+        targetPoint: "助動詞 Can 詢問能力的句型與答句聽解",
+        explanation: "問句「Can you swim?」（你會游泳嗎？），答句「Yes, I can.」（是的，我會）。肯定回答表示其能力為游泳 (swim)。故選 (1)。"
+      },
+
+      // ================= 114 年度 (10 題) =================
+      {
+        id: "114-1",
+        year: "114",
+        num: 1,
+        sectionId: 1,
+        sectionName: "一、聽辨語音",
+        weight: 4,
+        prompt: "1. c__t (請依所聽發音選出中間母音字母)",
+        phonicsDisplay: "c __ t",
+        speechText: "Cat. Cat. Cat.",
+        speechTarget: "Cat",
+        options: [
+          { idx: 1, text: "(1) a", sub: "拼讀為 cat (/kæt/ 貓咪)" },
+          { idx: 2, text: "(2) u", sub: "拼讀為 cut (/kʌt/ 切/剪)" },
+          { idx: 3, text: "(3) o", sub: "拼讀為 cot (/kɑːt/ 摺疊床)" }
+        ],
+        answer: 1,
+        transcript: "Cat. Cat. Cat.",
+        translation: "題目發音為：cat（音標 /kæt/）",
+        targetPoint: "短母音 a (/æ/) 與常見單字 cat 之拼讀",
+        explanation: "音檔播出「cat」。開頭硬顎塞音 /k/ 接短母音 /æ/，字尾為無聲塞音 /t/，拼成 cat。選項 (2) cut 發短母音 /ʌ/，選項 (3) cot 發短母音 /ɑː/。故選 (1)。"
+      },
+      {
+        id: "114-2",
+        year: "114",
+        num: 2,
+        sectionId: 1,
+        sectionName: "一、聽辨語音",
+        weight: 4,
+        prompt: "2. __ug (請依所聽發音選出開頭子音)",
+        phonicsDisplay: "__ ug",
+        speechText: "Bug. Bug. Bug.",
+        speechTarget: "Bug",
+        options: [
+          { idx: 1, text: "(1) b", sub: "拼讀為 bug (/bʌɡ/ 昆蟲)" },
+          { idx: 2, text: "(2) r", sub: "拼讀為 rug (/rʌɡ/ 小地毯)" },
+          { idx: 3, text: "(3) m", sub: "拼讀為 mug (/mʌɡ/ 馬克杯)" }
+        ],
+        answer: 1,
+        transcript: "Bug. Bug. Bug.",
+        translation: "題目發音為：bug（音標 /bʌɡ/）",
+        targetPoint: "字首濁雙唇爆破音 /b/ 之聽辨",
+        explanation: "音檔播出「bug」。字首為濁雙唇爆破音 /b/，接短母音 /ʌ/ 及濁塞音 /ɡ/，拼成 bug。選項 (2) rug 字首為 /r/，選項 (3) mug 字首為鼻音 /m/。故選 (1)。"
+      },
+      {
+        id: "114-3",
+        year: "114",
+        num: 3,
+        sectionId: 1,
+        sectionName: "一、聽辨語音",
+        weight: 4,
+        prompt: "3. s__ (請依所聽發音選出字尾組合)",
+        phonicsDisplay: "s __",
+        speechText: "Sit. Sit. Sit.",
+        speechTarget: "Sit",
+        options: [
+          { idx: 1, text: "(1) it", sub: "拼讀為 sit (/sɪt/ 坐下)" },
+          { idx: 2, text: "(2) et", sub: "拼讀為 set (/sɛt/ 一套/放置)" },
+          { idx: 3, text: "(3) ot", sub: "拼讀為 sot (/sɑːt/)" }
+        ],
+        answer: 1,
+        transcript: "Sit. Sit. Sit.",
+        translation: "題目發音為：sit（音標 /sɪt/）",
+        targetPoint: "短母音組合 -it (/ɪt/) 之拼讀聽辨",
+        explanation: "音檔播出「sit」。摩擦音 /s/ 加上短母音 /ɪ/ 及字尾 /t/，組成 sit。選項 (2) set 為短母音 /ɛ/。故選 (1)。"
+      },
+      {
+        id: "114-4",
+        year: "114",
+        num: 4,
+        sectionId: 2,
+        sectionName: "二、聽辨單字",
+        weight: 4,
+        prompt: "4. 請依據聽到的單字選出相符的水果圖片：",
+        speechText: "Apple. Apple. Apple.",
+        speechTarget: "apple",
+        options: [
+          { idx: 1, text: "apple", sub: "🍎 蘋果" },
+          { idx: 2, text: "banana", sub: "🍌 香蕉" },
+          { idx: 3, text: "pineapple", sub: "🍍 鳳梨" }
+        ],
+        answer: 1,
+        transcript: "Apple. Apple. Apple.",
+        translation: "單字為：apple（蘋果）",
+        targetPoint: "字首短母音 /æ/ 開頭核心食物單字辨識",
+        explanation: "音檔播出三次「apple」，發音為 /ˈæp.əl/，意思是「蘋果」。(2) banana 是香蕉，(3) pineapple 是鳳梨。故選 (1)。"
+      },
+      {
+        id: "114-5",
+        year: "114",
+        num: 5,
+        sectionId: 2,
+        sectionName: "二、聽辨單字",
+        weight: 4,
+        prompt: "5. 請依據聽到的單字選出相符的文具：",
+        speechText: "Eraser. Eraser. Eraser.",
+        speechTarget: "eraser",
+        options: [
+          { idx: 1, text: "eraser", sub: "🧼 橡皮擦" },
+          { idx: 2, text: "pencil", sub: "✏️ 鉛筆" },
+          { idx: 3, text: "notebook", sub: "📓 筆記本" }
+        ],
+        answer: 1,
+        transcript: "Eraser. Eraser. Eraser.",
+        translation: "單字為：eraser（橡皮擦）",
+        targetPoint: "三音節文具單字 eraser 之聽辨",
+        explanation: "音檔播出「eraser」，發音為 /ɪˈreɪ.sər/，意為擦拭鉛筆字的「橡皮擦」。(2) pencil 是鉛筆，(3) notebook 是筆記本。故選 (1)。"
+      },
+      {
+        id: "114-6",
+        year: "114",
+        num: 6,
+        sectionId: 2,
+        sectionName: "二、聽辨單字",
+        weight: 4,
+        prompt: "6. 請依據聽到的單字選出顏色：",
+        speechText: "Yellow. Yellow. Yellow.",
+        speechTarget: "yellow",
+        options: [
+          { idx: 1, text: "yellow", sub: "🟡 黃色" },
+          { idx: 2, text: "black", sub: "⚫ 黑色" },
+          { idx: 3, text: "white", sub: "⚪ 白色" }
+        ],
+        answer: 1,
+        transcript: "Yellow. Yellow. Yellow.",
+        translation: "單字為：yellow（黃色）",
+        targetPoint: "半母音 y- 開頭的顏色單字 yellow 之聽辨",
+        explanation: "音檔播出「yellow」，發音為 /ˈjɛl.oʊ/，指「黃色」。官方答案卷第 6 題為 (1)。"
+      },
+      {
+        id: "114-7",
+        year: "114",
+        num: 7,
+        sectionId: 3,
+        sectionName: "三、聽辨常用語或句子",
+        weight: 4,
+        prompt: "7. 請依據聽到的課堂用語選出正確情境：",
+        speechText: "Be quiet, please. Be quiet, please. Be quiet, please.",
+        speechTarget: "Be quiet, please.",
+        options: [
+          { idx: 1, text: "手指輕碰嘴唇請大家保持安靜", sub: "Be quiet, please. 🤫 請安靜" },
+          { idx: 2, text: "拿麥克風大聲朗誦", sub: "Speak loudly. 📢 大聲說" },
+          { idx: 3, text: "站立敬禮敬師長", sub: "Stand up. 🧍 起立" }
+        ],
+        answer: 1,
+        transcript: "Be quiet, please. Be quiet, please. Be quiet, please.",
+        translation: "用語：Be quiet, please.（請保持安靜。）",
+        targetPoint: "禮貌課室常規用語 Be quiet, please 之理解",
+        explanation: "「quiet」是「安靜的」，加上 please 構成禮貌祈使句「Be quiet, please.」（請安靜）。故選 (1)。"
+      },
+      {
+        id: "114-8",
+        year: "114",
+        num: 8,
+        sectionId: 3,
+        sectionName: "三、聽辨常用語或句子",
+        weight: 4,
+        prompt: "8. 請依據聽到的指令選出相符的動作：",
+        speechText: "Close your eyes. Close your eyes. Close your eyes.",
+        speechTarget: "Close your eyes.",
+        options: [
+          { idx: 1, text: "閉上雙眼靜心 (Close your eyes.)", sub: "閉眼睛 😌" },
+          { idx: 2, text: "睜大雙眼看黑板 (Open your eyes.)", sub: "睜開眼睛 👀" },
+          { idx: 3, text: "用手摸耳朵 (Touch your ears.)", sub: "摸摸耳朵 👂" }
+        ],
+        answer: 1,
+        transcript: "Close your eyes. Close your eyes. Close your eyes.",
+        translation: "指令：Close your eyes.（閉上你的雙眼。）",
+        targetPoint: "身體部位 eyes 與動詞 Close 的搭配理解",
+        explanation: "「Close」是閉上，「eyes」是眼睛，「Close your eyes.」意思是「閉上你的眼睛」。選項 (2) 睜眼為 Open your eyes。故選 (1)。"
+      },
+      {
+        id: "114-9",
+        year: "114",
+        num: 9,
+        sectionId: 3,
+        sectionName: "三、聽辨常用語或句子",
+        weight: 4,
+        prompt: "9. 請依據聽到的問答選出相符的動物：",
+        speechText: "What is this? It's an elephant. What is this? It's an elephant. What is this? It's an elephant.",
+        speechTarget: "What is this? It's an elephant.",
+        options: [
+          { idx: 1, text: "長長鼻子的大象 (elephant)", sub: "It's an elephant. 🐘" },
+          { idx: 2, text: "草原之王獅子 (lion)", sub: "It's a lion. 🦁" },
+          { idx: 3, text: "威武的大老虎 (tiger)", sub: "It's a tiger. 🐅" }
+        ],
+        answer: 1,
+        transcript: "What is this? It's an elephant.",
+        translation: "問答：這是什麼？這是一隻大象。",
+        targetPoint: "動物單字 elephant 及母音冠詞 an 的聽力識別",
+        explanation: "問句「What is this?」詢問面前物品，答句「It's an elephant.」（這是一隻大象）。elephant 為大象。故正確答案為 (1)。"
+      },
+      {
+        id: "114-10",
+        year: "114",
+        num: 10,
+        sectionId: 3,
+        sectionName: "三、聽辨常用語或句子",
+        weight: 4,
+        prompt: "10. 請依據聽到的問答選出代表的情緒或狀態：",
+        speechText: "Are you ready? Yes, I am. Are you ready? Yes, I am. Are you ready? Yes, I am.",
+        speechTarget: "Are you ready? Yes, I am.",
+        options: [
+          { idx: 1, text: "背好書包豎起大拇指「準備好了！」", sub: "Yes, I am. 👍 準備好" },
+          { idx: 2, text: "躺在床上賴床還沒睡醒", sub: "No, I'm not. 😴 還沒" },
+          { idx: 3, text: "在房間慌張找課本", sub: "慌張混亂 ❓" }
+        ],
+        answer: 1,
+        transcript: "Are you ready? Yes, I am.",
+        translation: "問答：你準備好了嗎？是的，我準備好了。",
+        targetPoint: "Are you ready? 問句與肯定答句 Yes, I am 之聽解",
+        explanation: "問句「Are you ready?」（你準備好了嗎？），回答「Yes, I am.」（是的，我準備好了）。選項 (1) 比讚準備出發代表準備齊全。故選 (1)。"
+      },
+
+      // ================= 115 年度 (10 題) =================
+      {
+        id: "115-1",
+        year: "115",
+        num: 1,
+        sectionId: 1,
+        sectionName: "一、聽辨語音",
+        weight: 4,
+        prompt: "1. f__x (請依所聽發音選出中間母音字母)",
+        phonicsDisplay: "f __ x",
+        speechText: "Fox. Fox. Fox.",
+        speechTarget: "Fox",
+        options: [
+          { idx: 1, text: "(1) o", sub: "拼讀為 fox (/fɑːks/ 狐狸)" },
+          { idx: 2, text: "(2) a", sub: "拼讀為 fax (/fæks/ 傳真)" },
+          { idx: 3, text: "(3) i", sub: "拼讀為 fix (/fɪks/ 修理)" }
+        ],
+        answer: 1,
+        transcript: "Fox. Fox. Fox.",
+        translation: "題目發音為：fox（音標 /fɑːks/）",
+        targetPoint: "短母音 o (/ɑː/) 與複輔音 x (/ks/) 之拼音聽辨",
+        explanation: "音檔播出「fox」。字首 /f/ 接圓唇短母音 /ɑː/，字尾為 /ks/，拼成 fox。選項 (2) fax 為短母音 /æ/，選項 (3) fix 為短母音 /ɪ/。故選 (1)。"
+      },
+      {
+        id: "115-2",
+        year: "115",
+        num: 2,
+        sectionId: 1,
+        sectionName: "一、聽辨語音",
+        weight: 4,
+        prompt: "2. __en (請依所聽發音選出開頭子音)",
+        phonicsDisplay: "__ en",
+        speechText: "Hen. Hen. Hen.",
+        speechTarget: "Hen",
+        options: [
+          { idx: 1, text: "(1) h", sub: "拼讀為 hen (/hɛn/ 母雞)" },
+          { idx: 2, text: "(2) p", sub: "拼讀為 pen (/pɛn/ 原子筆)" },
+          { idx: 3, text: "(3) t", sub: "拼讀為 ten (/tɛn/ 數字十)" }
+        ],
+        answer: 1,
+        transcript: "Hen. Hen. Hen.",
+        translation: "題目發音為：hen（音標 /hɛn/）",
+        targetPoint: "字首氣音 /h/ 與爆破音 /p/、/t/ 的發音區別",
+        explanation: "音檔播出三次「hen」。字首發出清脆的喉部摩擦氣流音 /h/，加上 -en 組成母雞 hen。選項 (2) pen 為唇音 /p/，選項 (3) ten 為齒齦音 /t/。故選 (1)。"
+      },
+      {
+        id: "115-3",
+        year: "115",
+        num: 3,
+        sectionId: 1,
+        sectionName: "一、聽辨語音",
+        weight: 4,
+        prompt: "3. n__ (請依所聽發音選出字尾組合)",
+        phonicsDisplay: "n __",
+        speechText: "Nut. Nut. Nut.",
+        speechTarget: "Nut",
+        options: [
+          { idx: 1, text: "(1) ut", sub: "拼讀為 nut (/nʌt/ 堅果)" },
+          { idx: 2, text: "(2) et", sub: "拼讀為 net (/nɛt/ 網子)" },
+          { idx: 3, text: "(3) at", sub: "拼讀為 nat (/næt/)" }
+        ],
+        answer: 1,
+        transcript: "Nut. Nut. Nut.",
+        translation: "題目發音為：nut（音標 /nʌt/）",
+        targetPoint: "短母音組合 -ut (/ʌt/) 之拼讀辨析",
+        explanation: "音檔播出「nut」。舌尖鼻音 /n/ 加上短母音 /ʌ/ 與 /t/，組成 nut。選項 (2) net 的母音為 /ɛ/，選項 (3) nat 的母音為 /æ/。故選 (1)。"
+      },
+      {
+        id: "115-4",
+        year: "115",
+        num: 4,
+        sectionId: 2,
+        sectionName: "二、聽辨單字",
+        weight: 4,
+        prompt: "4. 請依據聽到的單字選出相符的野生動物：",
+        speechText: "Tiger. Tiger. Tiger.",
+        speechTarget: "tiger",
+        options: [
+          { idx: 1, text: "tiger", sub: "🐅 老虎" },
+          { idx: 2, text: "lion", sub: "🦁 獅子" },
+          { idx: 3, text: "monkey", sub: "🐒 猴子" }
+        ],
+        answer: 1,
+        transcript: "Tiger. Tiger. Tiger.",
+        translation: "單字為：tiger（老虎）",
+        targetPoint: "雙音節動物名詞 tiger 之聽辨",
+        explanation: "音檔清楚播出「tiger」，發音為 /ˈtaɪ.ɡər/，指條紋猛獸「老虎」。(2) lion 是獅子，(3) monkey 是猴子。故選 (1)。"
+      },
+      {
+        id: "115-5",
+        year: "115",
+        num: 5,
+        sectionId: 2,
+        sectionName: "二、聽辨單字",
+        weight: 4,
+        prompt: "5. 請依據聽到的單字選出人物身體感覺狀態：",
+        speechText: "Tired. Tired. Tired.",
+        speechTarget: "tired",
+        options: [
+          { idx: 1, text: "tired", sub: "🥱 疲憊打哈欠想睡覺" },
+          { idx: 2, text: "happy", sub: "😊 開心微笑" },
+          { idx: 3, text: "hungry", sub: "🤤 肚子餓想吃美食" }
+        ],
+        answer: 1,
+        transcript: "Tired. Tired. Tired.",
+        translation: "單字為：tired（疲憊的、累的）",
+        targetPoint: "感覺形容詞 tired 之辨識",
+        explanation: "聽力檔第 5 題明確播出三次「tired」，意思是「疲倦、想睡覺的」。(2) happy 是快樂，(3) hungry 是肚子餓。故正確答案為 (1)。"
+      },
+      {
+        id: "115-6",
+        year: "115",
+        num: 6,
+        sectionId: 2,
+        sectionName: "二、聽辨單字",
+        weight: 4,
+        prompt: "6. 請依據聽到的單字選出人物身材特徵：",
+        speechText: "Thin. Thin. Thin.",
+        speechTarget: "thin",
+        options: [
+          { idx: 1, text: "thin", sub: "🧍‍♂️ 瘦瘦的" },
+          { idx: 2, text: "fat", sub: "🤼 胖胖的" },
+          { idx: 3, text: "tall", sub: "🦒 高高的" }
+        ],
+        answer: 1,
+        transcript: "Thin. Thin. Thin.",
+        translation: "單字為：thin（瘦的）",
+        targetPoint: "齒間無聲音 th- (/θ/) 與外貌形容詞 thin 之聽辨",
+        explanation: "聽力檔第 6 題清楚播出三次「thin」，發音為 /θɪn/，舌尖放在上下齒之間發氣音，意思是「瘦的」。(2) fat 是胖的，(3) tall 是高的。故選 (1)。"
+      },
+      {
+        id: "115-7",
+        year: "115",
+        num: 7,
+        sectionId: 3,
+        sectionName: "三、聽辨常用語或句子",
+        weight: 4,
+        prompt: "7. 請依據聽到的生活用語選出最相符的情境：",
+        speechText: "Try again. Try again. Try again.",
+        speechTarget: "Try again.",
+        options: [
+          { idx: 1, text: "投籃沒進，朋友在旁拍肩鼓勵「再試一次！」", sub: "Try again! 🏀 再試一次" },
+          { idx: 2, text: "比賽榮獲第一名頒獎拍手", sub: "Good job! 🏆 表現優秀" },
+          { idx: 3, text: "揮手互道珍重再見", sub: "Goodbye! 👋 再見" }
+        ],
+        answer: 1,
+        transcript: "Try again. Try again. Try again.",
+        translation: "用語：Try again.（再試一次。）",
+        targetPoint: "激勵用語 Try again 之生活情境理解",
+        explanation: "聽力檔第 7 題播出「Try again.」。「Try」是嘗試，「again」是再一次，整句是「再試一次、再接再厲！」，用在鼓勵失敗或未達標者。故選 (1)。"
+      },
+      {
+        id: "115-8",
+        year: "115",
+        num: 8,
+        sectionId: 3,
+        sectionName: "三、聽辨常用語或句子",
+        weight: 4,
+        prompt: "8. 請依據聽到的問答選出時鐘所指的時間：",
+        speechText: "What time is it? It's three o'clock. What time is it? It's three o'clock. What time is it? It's three o'clock.",
+        speechTarget: "What time is it? It's 3 o'clock.",
+        options: [
+          { idx: 1, text: "時鐘指向三點整 (3:00)", sub: "It's 3 o'clock. 🕒" },
+          { idx: 2, text: "時鐘指向兩點整 (2:00)", sub: "It's 2 o'clock. 🕑" },
+          { idx: 3, text: "時鐘指向五點整 (5:00)", sub: "It's 5 o'clock. 🕔" }
+        ],
+        answer: 1,
+        transcript: "What time is it? It's three o'clock.",
+        translation: "問答：現在幾點？現在是三點整。",
+        targetPoint: "時間詢問句「What time is it?」與整點鐘 3 o'clock 聽解",
+        explanation: "聽力檔第 8 題問「What time is it?」（現在幾點？），回答「It's three o'clock.」（現在是三點整）。時鐘短針指向 3、長針指在 12 的為正確選項 (1)。"
+      },
+      {
+        id: "115-9",
+        year: "115",
+        num: 9,
+        sectionId: 3,
+        sectionName: "三、聽辨常用語或句子",
+        weight: 4,
+        prompt: "9. 請依據聽到的句子選出符合描述的人物圖片：",
+        speechText: "The girl is tall. She can dance. The girl is tall. She can dance. The girl is tall, she can dance.",
+        speechTarget: "The girl is tall. She can dance.",
+        options: [
+          { idx: 1, text: "身材高挑且正在優雅跳舞的女孩", sub: "tall & can dance 🩰" },
+          { idx: 2, text: "身材矮小的男孩子在游泳池游泳", sub: "short & swim 🏊" },
+          { idx: 3, text: "靜靜坐在書桌前看書的女孩", sub: "read a book 📖" }
+        ],
+        answer: 1,
+        transcript: "The girl is tall. She can dance.",
+        translation: "句子：這個女孩很高。她會跳舞。",
+        targetPoint: "身材特徵形容詞 tall 與才藝能力 can dance 的多重描述聽解",
+        explanation: "聽力檔第 9 題包含兩個特徵：「The girl is tall.」（這個女孩身材高挑）以及「She can dance.」（她會跳舞）。(1) 完全吻合此兩項描述。故選 (1)。"
+      },
+      {
+        id: "115-10",
+        year: "115",
+        num: 10,
+        sectionId: 3,
+        sectionName: "三、聽辨常用語或句子",
+        weight: 4,
+        prompt: "10. 請依據聽到的句子選出看見的動物：",
+        speechText: "I see a dog. It's not big. I see a dog. It's not big. I see a dog. It's not big.",
+        speechTarget: "I see a dog. It's not big.",
+        options: [
+          { idx: 1, text: "一隻嬌小可愛的小小狗", sub: "a dog, not big 🐶" },
+          { idx: 2, text: "一隻體型龐大的大狼犬", sub: "a big dog 🐕‍🦺" },
+          { idx: 3, text: "一隻在玩毛線球的小貓咪", sub: "a cat 🐱" }
+        ],
+        answer: 1,
+        transcript: "I see a dog. It's not big.",
+        translation: "句子：我看見一隻狗。它不大（是小隻的狗）。",
+        targetPoint: "名詞 a dog 與否定句「It's not big.」之語意綜合推理",
+        explanation: "聽力檔第 10 題說「I see a dog.」（我看見一隻狗），並進一步補充「It's not big.」（它不大，即是小型犬）。選項 (2) 是大狗，選項 (3) 是貓。故正確答案為 (1)。"
+      }
+    ];
+
+    /* =====================================================================
+       應用程式狀態管理
+       ===================================================================== */
+    let currentYear = "110";
+    let currentCategoryFilter = "all";
+    let currentMode = "instant"; // "instant" (即時反饋) 或 "exam" (模擬考試交卷)
+    let examSubmitted = false;
+
+    // 語音設定
+    let speechRate = 0.85;
+    let speechRepeat = 3;
+    let currentlyPlayingQId = null;
+    let speechQueueTimeout = null;
+
+    // 作答紀錄狀態：{ [qId]: { selected: 1, isCorrect: true, answeredAt: 12345 } }
+    let userAnswers = {};
+
+    /* =====================================================================
+       生命週期與 State Persistence (notebookAppApi)
+       ===================================================================== */
+    window.addEventListener("DOMContentLoaded", async function() {
+      // 嘗試讀取已儲存狀態
+      try {
+        if (window.notebookAppApi && typeof window.notebookAppApi.getAppState === "function") {
+          const savedState = await window.notebookAppApi.getAppState();
+          if (savedState) {
+            if (savedState.userAnswers) userAnswers = savedState.userAnswers;
+            if (savedState.currentYear) currentYear = savedState.currentYear;
+            if (savedState.speechRate) speechRate = savedState.speechRate;
+            if (savedState.speechRepeat) speechRepeat = savedState.speechRepeat;
+            if (savedState.currentMode) currentMode = savedState.currentMode;
+            
+            // 同步介面下拉選單
+            const rateSelect = document.getElementById("speedSelect");
+            if (rateSelect) rateSelect.value = String(speechRate);
+            const repeatSelect = document.getElementById("repeatSelect");
+            if (repeatSelect) repeatSelect.value = String(speechRepeat);
+          }
+        }
+      } catch (err) {
+        console.warn("Could not load persisted state:", err);
+      }
+
+      initSpeechRecognitionCheck();
+      updateYearTabUI();
+      updateModeButtonsUI();
+      renderArchiveBadges();
+      renderQuestions();
+      updateMetrics();
+
+      // 通知 host 渲染完成
+      if (window.notebookAppApi && typeof window.notebookAppApi.notifyAppReady === "function") {
+        window.notebookAppApi.notifyAppReady();
+      }
+    });
+
+    async function persistState() {
+      if (window.notebookAppApi && typeof window.notebookAppApi.setAppState === "function") {
+        try {
+          await window.notebookAppApi.setAppState({
+            userAnswers: userAnswers,
+            currentYear: currentYear,
+            speechRate: speechRate,
+            speechRepeat: speechRepeat,
+            currentMode: currentMode,
+            updatedAt: Date.now()
+          });
+        } catch (err) {
+          console.warn("Failed to persist state:", err);
+        }
+      }
+    }
+
+    /* =====================================================================
+       Web Speech API 播放控制器
+       ===================================================================== */
+    function initSpeechRecognitionCheck() {
+      const statusEl = document.getElementById("speechEngineStatus");
+      if (!('speechSynthesis' in window)) {
+        if (statusEl) {
+          statusEl.innerText = "瀏覽器未支援語音";
+          statusEl.style.color = "var(--error)";
+        }
+      } else {
+        if (statusEl) {
+          statusEl.innerText = "Web Speech 就緒";
+          statusEl.style.color = "var(--positive)";
+        }
+        // 觸發載入聲音列表
+        window.speechSynthesis.getVoices();
+        if (typeof window.speechSynthesis.onvoiceschanged !== "undefined") {
+          window.speechSynthesis.onvoiceschanged = function() {
+            window.speechSynthesis.getVoices();
+          };
+        }
+      }
+    }
+
+    function stopCurrentSpeech() {
+      if (speechQueueTimeout) {
+        clearTimeout(speechQueueTimeout);
+        speechQueueTimeout = null;
+      }
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+      const prevId = currentlyPlayingQId;
+      currentlyPlayingQId = null;
+      if (prevId) {
+        updatePlayButtonState(prevId, false);
+      }
+    }
+
+    function playAudio(qId, textToSpeak, countTotal = null) {
+      if (!('speechSynthesis' in window)) {
+        alert("很抱歉，您的瀏覽器不支援 Web Speech API。請使用最新版本之 Google Chrome、Microsoft Edge 或 Safari 以享受最佳語音朗讀體驗。");
+        return;
+      }
+
+      // 如果正在播放同一題，則作為停止鈕 (toggle)
+      if (currentlyPlayingQId === qId) {
+        stopCurrentSpeech();
+        return;
+      }
+
+      stopCurrentSpeech();
+
+      const timesToPlay = countTotal !== null ? countTotal : speechRepeat;
+      let timesPlayed = 0;
+      currentlyPlayingQId = qId;
+      updatePlayButtonState(qId, true, 1, timesToPlay);
+
+      // 選取優質英語發音
+      const voices = window.speechSynthesis.getVoices();
+      let enVoice = voices.find(v => v.lang.startsWith("en-US") && (v.name.includes("Natural") || v.name.includes("Google") || v.name.includes("Samantha"))) 
+                 || voices.find(v => v.lang.startsWith("en-US"))
+                 || voices.find(v => v.lang.startsWith("en"));
+
+      function speakOnce() {
+        if (currentlyPlayingQId !== qId) return;
+
+        timesPlayed++;
+        updatePlayButtonState(qId, true, timesPlayed, timesToPlay);
+
+        const utterance = new SpeechSynthesisUtterance(textToSpeak);
+        utterance.lang = "en-US";
+        utterance.rate = speechRate;
+        utterance.pitch = 1.0;
+        if (enVoice) utterance.voice = enVoice;
+
+        utterance.onend = function() {
+          if (currentlyPlayingQId !== qId) return;
+          if (timesPlayed < timesToPlay) {
+            // 每遍之間依據標準大考停頓約 1.1 秒
+            speechQueueTimeout = setTimeout(function() {
+              speakOnce();
+            }, 1100);
+          } else {
+            currentlyPlayingQId = null;
+            updatePlayButtonState(qId, false);
+          }
+        };
+
+        utterance.onerror = function() {
+          currentlyPlayingQId = null;
+          updatePlayButtonState(qId, false);
+        };
+
+        window.speechSynthesis.speak(utterance);
+      }
+
+      speakOnce();
+    }
+
+    function updatePlayButtonState(qId, isPlaying, currentLoop = 1, totalLoop = 3) {
+      const btn = document.getElementById(`playBtn-${qId}`);
+      const wave = document.getElementById(`wave-${qId}`);
+      if (!btn) return;
+
+      if (isPlaying) {
+        btn.classList.add("playing");
+        btn.innerHTML = `<span>⏹ 停止 (第 ${currentLoop}/${totalLoop} 遍)</span>`;
+        if (wave) wave.classList.add("active");
+      } else {
+        btn.classList.remove("playing");
+        btn.innerHTML = `<span>▶ 播放題目語音</span>`;
+        if (wave) wave.classList.remove("active");
+      }
+    }
+
+    function testBrowserAudio() {
+      playAudio('test', 'Welcome to Grade 4 English Listening Practice. Good luck!', 1);
+    }
+
+    function changeSpeechRate(val) {
+      speechRate = parseFloat(val);
+      updateSpeechSettingBadge();
+      persistState();
+    }
+
+    function changeSpeechRepeat(val) {
+      speechRepeat = parseInt(val, 10);
+      updateSpeechSettingBadge();
+      persistState();
+    }
+
+    function updateSpeechSettingBadge() {
+      const badge = document.getElementById("speechSettingBadge");
+      if (badge) {
+        badge.innerText = `${speechRepeat === 3 ? "標準 3 遍" : "快速 1 遍"} · ${speechRate}x 語速`;
+      }
+    }
+
+    /* =====================================================================
+       年度切換與分類篩選
+       ===================================================================== */
+    function switchYear(year) {
+      stopCurrentSpeech();
+      currentYear = year;
+      updateYearTabUI();
+      renderArchiveBadges();
+      renderQuestions();
+      updateMetrics();
+      persistState();
+    }
+
+    function updateYearTabUI() {
+      const tabs = ["110", "111", "112", "113", "114", "115", "ALL"];
+      tabs.forEach(y => {
+        const el = document.getElementById(`tab-${y}`);
+        if (el) {
+          if (y === currentYear) {
+            el.classList.add("active");
+          } else {
+            el.classList.remove("active");
+          }
+        }
+      });
+    }
+
+    function setCategoryFilter(filter) {
+      currentCategoryFilter = filter;
+      const filters = ["all", "sec1", "sec2", "sec3", "wrong", "unanswered"];
+      filters.forEach(f => {
+        const el = document.getElementById(`filt-${f}`);
+        if (el) {
+          if (f === filter) el.classList.add("active");
+          else el.classList.remove("active");
+        }
+      });
+      renderQuestions();
+    }
+
+    function setMode(mode) {
+      currentMode = mode;
+      updateModeButtonsUI();
+      renderQuestions();
+      persistState();
+    }
+
+    function updateModeButtonsUI() {
+      const instantBtn = document.getElementById("modeInstantBtn");
+      const examBtn = document.getElementById("modeExamBtn");
+      const dockSubmitBtn = document.getElementById("examSubmitBtn");
+
+      if (currentMode === "instant") {
+        if (instantBtn) {
+          instantBtn.className = "btn btn-sm btn-primary";
+        }
+        if (examBtn) {
+          examBtn.className = "btn btn-sm btn-outline";
+        }
+        if (dockSubmitBtn) dockSubmitBtn.style.display = "none";
+      } else {
+        if (instantBtn) {
+          instantBtn.className = "btn btn-sm btn-outline";
+        }
+        if (examBtn) {
+          examBtn.className = "btn btn-sm btn-primary";
+        }
+        if (dockSubmitBtn) dockSubmitBtn.style.display = "inline-flex";
+      }
+    }
+
+    function submitExamMode() {
+      examSubmitted = true;
+      renderQuestions();
+      updateMetrics();
+      alert(`測驗交卷完成！您的本年度成績為：${calculateScore(currentYear)} 分。詳細解析已全面展開！`);
+      window.scrollTo({ top: 350, behavior: "smooth" });
+    }
+
+    /* =====================================================================
+       選項點選與即時評分
+       ===================================================================== */
+    function selectOption(qId, selectedIdx) {
+      const q = QUIZ_DATA.find(item => item.id === qId);
+      if (!q) return;
+
+      const isCorrect = (selectedIdx === q.answer);
+      userAnswers[qId] = {
+        selected: selectedIdx,
+        isCorrect: isCorrect,
+        answeredAt: Date.now()
+      };
+
+      // 重新渲染該卡片，避免整體滾動條抖動
+      renderSingleQuestionCard(qId);
+      updateMetrics();
+      renderArchiveBadges();
+      persistState();
+    }
+
+    function toggleTranscript(qId) {
+      const drawer = document.getElementById(`drawer-${qId}`);
+      const btn = document.getElementById(`toggleBtn-${qId}`);
+      if (!drawer) return;
+
+      if (drawer.style.display === "none" || drawer.style.display === "") {
+        drawer.style.display = "flex";
+        if (btn) btn.innerText = "收合逐字稿與解析 ▲";
+      } else {
+        drawer.style.display = "none";
+        if (btn) btn.innerText = "查看逐字稿與詳解 ▼";
+      }
+    }
+
+    /* =====================================================================
+       介面渲染邏輯
+       ===================================================================== */
+    function getFilteredQuestions() {
+      return QUIZ_DATA.filter(q => {
+        // 年度比對
+        if (currentYear !== "ALL" && q.year !== currentYear) return false;
+
+        // 分類過濾
+        if (currentCategoryFilter === "sec1" && q.sectionId !== 1) return false;
+        if (currentCategoryFilter === "sec2" && q.sectionId !== 2) return false;
+        if (currentCategoryFilter === "sec3" && q.sectionId !== 3) return false;
+        if (currentCategoryFilter === "wrong") {
+          const ans = userAnswers[q.id];
+          if (!ans || ans.isCorrect) return false;
+        }
+        if (currentCategoryFilter === "unanswered") {
+          if (userAnswers[q.id]) return false;
+        }
+
+        return true;
+      });
+    }
+
+    function renderQuestions() {
+      const container = document.getElementById("questionsStream");
+      if (!container) return;
+
+      const questions = getFilteredQuestions();
+
+      if (questions.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <div style="font-size: 3rem;">🎉</div>
+            <h3 class="headline">目前條件下沒有題目</h3>
+            <p class="subhead">太棒了！若您正在查看錯題或未作答題目，代表此分類中目前無待複習項目。</p>
+            <button class="btn btn-primary" onclick="setCategoryFilter('all')" type="button">查看全部題目</button>
+          </div>
+        `;
+        return;
+      }
+
+      let html = "";
+      let currentSectionTracker = null;
+
+      questions.forEach((q) => {
+        // 大題分隔線
+        if (currentCategoryFilter === "all" && q.sectionId !== currentSectionTracker) {
+          currentSectionTracker = q.sectionId;
+          const sectionTitleMap = {
+            1: "一、聽辨語音 (Phonics 字母發音與拼讀 · 佔12%)",
+            2: "二、聽辨單字 (Vocabulary 基礎核心單字 · 佔12%)",
+            3: "三、聽辨常用語或句子 (Phrases & Sentences 生活問答 · 佔16%)"
+          };
+          html += `
+            <div class="section-divider">
+              <h3>${sectionTitleMap[q.sectionId]}</h3>
+              <span>每題播出 3 遍 · 佔 4 分</span>
+            </div>
+          `;
+        }
+
+        html += buildQuestionCardHTML(q);
+      });
+
+      container.innerHTML = html;
+    }
+
+    function buildQuestionCardHTML(q) {
+      const userAns = userAnswers[q.id];
+      const hasAnswered = !!userAns;
+      const isCorrect = userAns ? userAns.isCorrect : false;
+      const showFeedback = (currentMode === "instant" && hasAnswered) || (currentMode === "exam" && examSubmitted);
+
+      let cardStateClass = "";
+      if (showFeedback) {
+        cardStateClass = isCorrect ? "answered-correct" : "answered-wrong";
+      }
+
+      return `
+        <article class="q-card ${cardStateClass}" id="card-${q.id}" aria-label="第 ${q.num} 題">
+          <!-- Card Header -->
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">${q.year}年 第 ${q.num} 題</span>
+              <span class="tag tag-grape">${q.sectionName}</span>
+              <span class="tag tag-sky">${q.weight} 分</span>
+              ${showFeedback ? (isCorrect ? '<span class="tag tag-green">✓ 答對 +4分</span>' : '<span class="tag tag-pink">✕ 答錯 0分</span>') : ''}
+            </div>
+
+            <div class="audio-play-bar">
+              <div class="waveform-indicator" id="wave-${q.id}" aria-hidden="true">
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+              </div>
+              <button class="btn-play" id="playBtn-${q.id}" onclick="playAudio('${q.id}', '${q.speechText}')" type="button" aria-label="播放第 ${q.num} 題語音">
+                <span>▶ 播放題目語音</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Body & Prompt -->
+          <div class="q-body">
+            <div class="q-prompt-box">
+              <div class="q-prompt-text">
+                <span>${q.prompt}</span>
+              </div>
+              ${q.phonicsDisplay ? `<div class="q-phonics-display" title="拼字提示">${q.phonicsDisplay}</div>` : ''}
+            </div>
+
+            <!-- 3 Options Grid -->
+            <div class="options-grid">
+              ${q.options.map((opt) => {
+                let optClass = "option-card";
+                const isSelected = hasAnswered && userAns.selected === opt.idx;
+
+                if (isSelected) optClass += " selected";
+                if (showFeedback) {
+                  if (opt.idx === q.answer) optClass += " correct";
+                  else if (isSelected && !isCorrect) optClass += " wrong";
+                }
+
+                return `
+                  <div class="${optClass}" onclick="selectOption('${q.id}', ${opt.idx})" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')selectOption('${q.id}', ${opt.idx})">
+                    <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+                      <div class="bubble-2b">${opt.idx}</div>
+                      ${showFeedback && opt.idx === q.answer ? '<span class="tag tag-green" style="font-size: 0.7rem;">標準答案</span>' : ''}
+                    </div>
+                    <div class="option-text-main">${opt.text}</div>
+                    <div class="option-text-sub">${opt.sub}</div>
+                  </div>
+                `;
+              }).join("")}
+            </div>
+
+            <!-- Feedback & Explanation Drawer -->
+            ${showFeedback ? `
+              <div class="feedback-banner show ${isCorrect ? 'correct' : 'wrong'}">
+                <div class="feedback-title">
+                  ${isCorrect ? '🎉 恭喜回答正確！' : '💡 這題答錯了，請仔細看下方解題分析：'}
+                </div>
+                <div style="font-size: 0.9rem;">
+                  正解為 <strong>(${q.answer}) ${q.options.find(o => o.idx === q.answer).text}</strong>
+                </div>
+              </div>
+
+              <div>
+                <button class="btn btn-sm btn-outline" id="toggleBtn-${q.id}" onclick="toggleTranscript('${q.id}')" type="button" style="margin-bottom: var(--space-xs);">
+                  ${showFeedback ? '收合逐字稿與解析 ▲' : '查看逐字稿與詳解 ▼'}
+                </button>
+
+                <div class="drawer-content" id="drawer-${q.id}" style="${showFeedback ? 'display: flex;' : 'display: none;'}">
+                  <!-- Transcript Box -->
+                  <div class="script-box">
+                    <div>
+                      <div style="font-size: 0.75rem; color: #f080c0; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px;">Listening Transcript (聽力逐字稿)</div>
+                      <div class="script-text">"${q.transcript}"</div>
+                    </div>
+                    <button class="btn btn-sm btn-sky" onclick="playAudio('script-${q.id}', '${q.transcript}', 1)" type="button" title="點擊單獨播放這句逐字稿">
+                      🔊 朗讀此句
+                    </button>
+                  </div>
+
+                  <div class="explanation-item">
+                    <strong>中文翻譯：</strong>
+                    <span>${q.translation}</span>
+                  </div>
+
+                  <div class="explanation-item">
+                    <strong>評量指標：</strong>
+                    <span>${q.targetPoint}</span>
+                  </div>
+
+                  <div class="explanation-item">
+                    <strong>詳細解題要領：</strong>
+                    <span>${q.explanation}</span>
+                  </div>
+                </div>
+              </div>
+            ` : `
+              <div style="display: flex; justify-content: flex-end;">
+                <span class="label-badge" style="color: var(--on-surface-variant);">請點擊上方選項以 2B 鉛筆方式劃記作答</span>
+              </div>
+            `}
+          </div>
+        </article>
+      `;
+    }
+
+    function renderSingleQuestionCard(qId) {
+      const q = QUIZ_DATA.find(item => item.id === qId);
+      if (!q) return;
+      const el = document.getElementById(`card-${qId}`);
+      if (!el) {
+        renderQuestions();
+        return;
+      }
+      const tempDiv = document.createElement("div");
+      tempDiv.innerHTML = buildQuestionCardHTML(q);
+      const newCard = tempDiv.firstElementChild;
+      if (newCard) {
+        el.replaceWith(newCard);
+      }
+    }
+
+    /* =====================================================================
+       統計儀表板與進度計算
+       ===================================================================== */
+    function calculateScore(year) {
+      const yearQuestions = QUIZ_DATA.filter(q => q.year === year);
+      let score = 0;
+      yearQuestions.forEach(q => {
+        const ans = userAnswers[q.id];
+        if (ans && ans.isCorrect) {
+          score += q.weight;
+        }
+      });
+      return score;
+    }
+
+    function updateMetrics() {
+      // 1. 目前選擇年度統計 (滿分 40 分)
+      const currentQuestions = currentYear === "ALL" 
+        ? QUIZ_DATA 
+        : QUIZ_DATA.filter(q => q.year === currentYear);
+
+      let currentCorrect = 0;
+      let currentAnswered = 0;
+      const maxScore = currentQuestions.reduce((acc, q) => acc + q.weight, 0);
+
+      currentQuestions.forEach(q => {
+        const a = userAnswers[q.id];
+        if (a) {
+          currentAnswered++;
+          if (a.isCorrect) currentCorrect++;
+        }
+      });
+
+      const currentScore = currentCorrect * 4;
+      const accuracyPercent = currentAnswered > 0 ? Math.round((currentCorrect / currentAnswered) * 100) : 0;
+
+      const scoreDisplay = document.getElementById("yearScoreDisplay");
+      if (scoreDisplay) {
+        scoreDisplay.innerHTML = `${currentScore} / ${maxScore} <span style="font-size: 1rem; color: var(--on-surface-variant);">分</span>`;
+      }
+      const percentDisplay = document.getElementById("yearPercentDisplay");
+      if (percentDisplay) {
+        percentDisplay.innerText = `正確率 ${accuracyPercent}%`;
+      }
+
+      const correctDisplay = document.getElementById("yearCorrectDisplay");
+      if (correctDisplay) {
+        correctDisplay.innerHTML = `${currentCorrect} <span style="font-size: 1rem; color: var(--on-surface-variant);">/ ${currentQuestions.length} 題</span>`;
+      }
+      const answeredDisplay = document.getElementById("yearAnsweredDisplay");
+      if (answeredDisplay) {
+        answeredDisplay.innerText = `已作答 ${currentAnswered} 題 · 待答 ${currentQuestions.length - currentAnswered} 題`;
+      }
+
+      // 2. 全卷 60 題統計
+      let totalAnswered = 0;
+      let totalCorrect = 0;
+      QUIZ_DATA.forEach(q => {
+        const a = userAnswers[q.id];
+        if (a) {
+          totalAnswered++;
+          if (a.isCorrect) totalCorrect++;
+        }
+      });
+
+      const totalProgDisplay = document.getElementById("totalProgressDisplay");
+      if (totalProgDisplay) {
+        totalProgDisplay.innerHTML = `${totalAnswered} <span style="font-size: 1rem; color: var(--on-surface-variant);">/ 60 題</span>`;
+      }
+      const totalAccDisplay = document.getElementById("totalAccuracyDisplay");
+      if (totalAccDisplay) {
+        totalAccDisplay.innerText = `全卷答對 ${totalCorrect} 題 (${totalAnswered > 0 ? Math.round((totalCorrect/totalAnswered)*100) : 0}%)`;
+      }
+
+      // 3. 底部黏附 dock 更新
+      const dockStatus = document.getElementById("dockStatusText");
+      if (dockStatus) {
+        dockStatus.innerText = `進度：${currentAnswered} / ${currentQuestions.length} 題`;
+      }
+      const dockProgress = document.getElementById("dockProgressFill");
+      if (dockProgress) {
+        const ratio = currentQuestions.length > 0 ? (currentAnswered / currentQuestions.length) * 100 : 0;
+        dockProgress.style.width = `${ratio}%`;
+      }
+    }
+
+    function renderArchiveBadges() {
+      const container = document.getElementById("archiveBadgesGrid");
+      if (!container) return;
+
+      const years = ["110", "111", "112", "113", "114", "115"];
+      let html = "";
+
+      years.forEach(yr => {
+        const yrQuestions = QUIZ_DATA.filter(q => q.year === yr);
+        let answeredCount = 0;
+        let correctCount = 0;
+        yrQuestions.forEach(q => {
+          const a = userAnswers[q.id];
+          if (a) {
+            answeredCount++;
+            if (a.isCorrect) correctCount++;
+          }
+        });
+
+        const score = correctCount * 4;
+        const isActive = (currentYear === yr);
+
+        html += `
+          <div class="archive-badge ${isActive ? 'active' : ''}" onclick="switchYear('${yr}')" role="button" tabindex="0">
+            <div style="font-weight: 800; font-size: 0.9rem; color: var(--on-surface);">${yr} 年度</div>
+            <div style="font-family: var(--font-label); font-size: 1.1rem; font-weight: 900; color: ${score >= 32 ? 'var(--positive)' : 'var(--primary)'};">
+              ${score} / 40
+            </div>
+            <div style="font-size: 0.72rem; color: var(--on-surface-variant);">
+              ${answeredCount === 10 ? '✓ 已測完' : `已答 ${answeredCount}/10`}
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    /* =====================================================================
+       重設與匯出資料模組
+       ===================================================================== */
+    function openResetModal() {
+      const modal = document.getElementById("resetModal");
+      if (modal) modal.classList.add("active");
+    }
+
+    function closeResetModal() {
+      const modal = document.getElementById("resetModal");
+      if (modal) modal.classList.remove("active");
+    }
+
+    function confirmReset(scope) {
+      if (scope === "current" && currentYear !== "ALL") {
+        QUIZ_DATA.filter(q => q.year === currentYear).forEach(q => {
+          delete userAnswers[q.id];
+        });
+      } else {
+        userAnswers = {};
+      }
+      closeResetModal();
+      renderArchiveBadges();
+      renderQuestions();
+      updateMetrics();
+      persistState();
+    }
+
+    function exportQuizReport() {
+      let report = `教育部國教署學習扶助 四年級英語篩選測驗聽力測驗 答題成績單\n`;
+      report += `產生時間：${new Date().toLocaleString('zh-TW')}\n`;
+      report += `=======================================================\n\n`;
+
+      const years = ["110", "111", "112", "113", "114", "115"];
+      let grandTotalScore = 0;
+
+      years.forEach(yr => {
+        const yrQuestions = QUIZ_DATA.filter(q => q.year === yr);
+        let correctCount = 0;
+        let answeredCount = 0;
+        yrQuestions.forEach(q => {
+          const a = userAnswers[q.id];
+          if (a) {
+            answeredCount++;
+            if (a.isCorrect) correctCount++;
+          }
+        });
+        const score = correctCount * 4;
+        grandTotalScore += score;
+        report += `【${yr} 年度聽力測驗】得分：${score} / 40 分（答對 ${correctCount}/10 題，完成度 ${answeredCount}/10）\n`;
+      });
+
+      report += `\n全卷 6 年度總分：${grandTotalScore} / 240 分\n`;
+      report += `-------------------------------------------------------\n`;
+      report += `各題明細紀錄：\n`;
+
+      QUIZ_DATA.forEach(q => {
+        const a = userAnswers[q.id];
+        const status = a ? (a.isCorrect ? "✓ 答對" : `✕ 答錯 (學生選 ${a.selected} / 正解 ${q.answer})`) : "未作答";
+        report += `${q.year}年 第${q.num}題 [${q.sectionName}]：${status} | 聽力腳本: "${q.speechTarget}"\n`;
+      });
+
+      if (window.notebookAppApi && typeof window.notebookAppApi.triggerFileDownload === "function") {
+        window.notebookAppApi.triggerFileDownload({
+          content: report,
+          contentType: "text/plain",
+          encoding: "UTF-8",
+          filename: `四年級英語篩選測驗_聽力測驗成績單_${Date.now()}.txt`
+        });
+      } else {
+        // Fallback blob download
+        const blob = new Blob([report], { type: "text/plain;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `四年級英語聽力成績單.txt`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+    }
+  </script>
+</body>
+</html>
